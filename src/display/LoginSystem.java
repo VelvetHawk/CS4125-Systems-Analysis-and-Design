@@ -1,3 +1,5 @@
+package display;
+
 public class LoginSystem {
 
     /**
@@ -6,5 +8,4 @@ public class LoginSystem {
     public static void main(String[] args) {
         LoginPage login = new LoginPage();
     }
-    
 }
