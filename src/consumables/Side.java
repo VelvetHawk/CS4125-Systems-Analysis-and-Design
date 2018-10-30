@@ -1,5 +1,6 @@
 package consumables;
 
-public class Side
+public class Side extends Consumable
 {
+
 }

@@ -1,5 +1,6 @@
 package consumables;
 
-public class Topping
+public class Topping extends Consumable
 {
+
 }

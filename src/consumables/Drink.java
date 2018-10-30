@@ -1,5 +1,6 @@
 package consumables;
 
-public class Drink
+public class Drink extends Consumable
 {
+
 }

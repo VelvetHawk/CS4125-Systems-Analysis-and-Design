@@ -1,5 +1,6 @@
 package accounts;
 
-public class CustomerAccount
+public class CustomerAccount extends Account
 {
+	protected int customerNumber;
 }
