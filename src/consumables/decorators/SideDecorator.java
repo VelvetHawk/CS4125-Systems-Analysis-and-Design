@@ -1,28 +1,18 @@
 package consumables.decorators;
 
-public class SideDecorator extends ConsumableDecorator
+public abstract class SideDecorator implements Consumable
 {
-	@Override
-	public String getName()
+	// Decorator chain
+	protected Consumable parent;
+	
+	public SideDecorator(Consumable parent)
 	{
-		return name;
+		this.parent = parent;
 	}
 	
 	@Override
-	public void setName(String name)
-	{
-		this.name = name;
-	}
+	public abstract String getName();
 	
 	@Override
-	public void setCost(double cost)
-	{
-		this.cost = cost;
-	}
-	
-	@Override
-	public double getCost()
-	{
-		return parent.getCost() + cost;
-	}
+	public abstract double getCost();
 }

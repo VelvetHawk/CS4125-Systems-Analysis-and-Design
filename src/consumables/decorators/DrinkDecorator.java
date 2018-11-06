@@ -2,9 +2,24 @@ package consumables.decorators;
 
 import consumables.Size;
 
-public class DrinkDecorator extends ConsumableDecorator
+public abstract class DrinkDecorator implements Consumable
 {
+	// Decorator chain
+	protected Consumable parent;
+	
 	protected Size size;
+	
+	public DrinkDecorator(Consumable parent)
+	{
+		this.parent = parent;
+		size = Size.SMALL; // Default
+	}
+	
+	public DrinkDecorator(Consumable parent, Size size)
+	{
+		this.parent = parent;
+		this.size = size;
+	}
 	
 	public Size getSize()
 	{
@@ -17,26 +32,8 @@ public class DrinkDecorator extends ConsumableDecorator
 	}
 	
 	@Override
-	public String getName()
-	{
-		return name;
-	}
+	public abstract String getName();
 	
 	@Override
-	public void setName(String name)
-	{
-		this.name = name;
-	}
-	
-	@Override
-	public void setCost(double cost)
-	{
-		this.cost = cost;
-	}
-	
-	@Override
-	public double getCost()
-	{
-		return parent.getCost() + cost;
-	}
+	public abstract double getCost();
 }
