@@ -9,8 +9,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
-public class LoginPage extends JFrame {
-
+public class LoginPage extends JFrame
+{
     private JLabel nameLabel;
     private JLabel passwordLabel;
     private JTextField nameText;

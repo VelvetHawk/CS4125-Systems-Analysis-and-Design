@@ -2,7 +2,7 @@ package consumables.basics;
 
 import consumables.decorators.Consumable;
 
-public class BasicTopping implements Consumable
+public abstract class BasicTopping implements Consumable
 {
 	@Override
 	public double getCost()
