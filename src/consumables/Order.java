@@ -15,4 +15,10 @@ public class Order
 	private ArrayList<SideDecorator> sides;
 	private ArrayList<DrinkDecorator> drinks;
 	private Status orderStatus;
+	
+	public double getTotalCost()
+	{
+		// TODO: Implement method
+		return 0;
+	}
 }

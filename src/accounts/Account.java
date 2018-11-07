@@ -9,7 +9,7 @@ public abstract class Account
 	protected String phone;
 	protected String address;
 	
-	Account()
+	public Account()
 	{
 	
 	}
