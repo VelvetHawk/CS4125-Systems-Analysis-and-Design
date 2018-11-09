@@ -6,6 +6,7 @@
 //package com.mvc.view;
 
 //import com.mvc.controller.LoginController;
+package main;
 
 package main;
 
@@ -80,4 +81,6 @@ public class LoginView extends JFrame{
     //LoginPage.ButtonHandler handler = new LoginPage.ButtonHandler();
     //submitButton.addActionListener(handler);
     }
+
+
 
