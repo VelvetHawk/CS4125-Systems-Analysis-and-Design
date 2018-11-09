@@ -4,16 +4,19 @@
  * and open the template in the editor.
  */
 //package com.mvc.model;
+package main;
 
 import java.sql.*;
 import java.sql.Connection;
+
+import data.SQLConnector;
 
 /**
  *
  * @author conor_000
  */
 public class LoginModel {
-   private Connection connect = null;
+   
    Connection conn = null;
    private boolean loginValid = false;
    
@@ -26,14 +29,9 @@ public class LoginModel {
    
    if(passChars!=null) { 
        String pass=new String(passChars);
-       
-       try{
-        Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager
-          .getConnection("jdbc:mysql://localhost/accounts?"
-              + "user=sqluser&password=sqluserpw");
-
-        String sql="SELECT username, password FROM TakeawayAccounts where username=? and password=?";
+       SQLConnector SQLconn = new SQLConnector();
+       conn = SQLconn.getConnection();
+	    String sql="SELECT username, password FROM TakeawayAccounts where username=? and password=?";
         PreparedStatement ps=conn.prepareStatement(sql);
         ps.setString(1,user);
         ps.setString(2,pass);
@@ -42,39 +40,20 @@ public class LoginModel {
            //found
            
            loginValid = true;
-           /*
-           errorLabel = new JLabel("Logging in");
-           add(errorLabel);
-           */
+          
         }
         else{
            //not found
           
            loginValid = false;
-           /*
-           errorLabel = new JLabel("Invalid username or password");
-           add(errorLabel);
-           */
+           
         }
+		
         rs.close();
         ps.close();
         conn.close();
-       }
-       catch(ClassNotFoundException exc){
-            System.out.println(exc);
-            exc.printStackTrace();
-            throw exc;
-           
-           //System.out.println("Could not find data");
-       }
        
-      catch(SQLException exc){
-          exc.printStackTrace();
-          throw exc;
-      }
-       finally{
-           //close();
-       }
    }
    }
 }
+
