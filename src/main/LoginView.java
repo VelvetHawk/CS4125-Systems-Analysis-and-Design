@@ -7,6 +7,8 @@
 
 //import com.mvc.controller.LoginController;
 
+package main;
+
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
