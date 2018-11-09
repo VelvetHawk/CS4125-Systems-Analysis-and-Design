@@ -6,6 +6,7 @@
 //package com.mvc.view;
 
 //import com.mvc.controller.LoginController;
+package main;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -78,4 +79,6 @@ public class LoginView extends JFrame{
     //LoginPage.ButtonHandler handler = new LoginPage.ButtonHandler();
     //submitButton.addActionListener(handler);
     }
+
+
 
