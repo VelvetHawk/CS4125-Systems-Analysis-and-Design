@@ -6,8 +6,6 @@
 //package com.mvc.model;
 package main;
 
-package main;
-
 import java.sql.*;
 import java.sql.Connection;
 
