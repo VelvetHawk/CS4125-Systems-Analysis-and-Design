@@ -8,6 +8,8 @@
 //import com.mvc.model.LoginModel;
 //import com.mvc.view.LoginView;
 
+package main;
+
 import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
