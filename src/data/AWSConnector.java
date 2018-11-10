@@ -20,10 +20,10 @@ public class AWSConnector implements DatabaseConnector
 	}
 	
 	@Override
-	public boolean select(String table, String[] columns, String whereClause, String orderByClause)
+	public String[][] select(String table, String[] columns, String whereClause, String orderByClause)
 	{
 		// TODO: Finish implementation
-		return false;
+		return null;
 	}
 	
 	@Override

@@ -6,7 +6,7 @@ public interface DatabaseConnector
 {
 	public Connection getConnection() throws Exception;
 	public boolean insert(String table, String[] columns, String[] values);
-	public boolean select(String table, String[] columns, String whereClause, String orderByClause);
+	public String[][] select(String table, String[] columns, String whereClause, String orderByClause);
 	public boolean update(String table, String[] columns, String[] values, String whereClause);
 	public boolean delete(String table, String whereClause);
 }
