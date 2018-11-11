@@ -6,6 +6,6 @@ public class Restaurant
 {
 	public static void main(String[] args)
 	{
-		LoginView view = new LoginView();
+		RegisterLogin rl = new RegisterLogin();
 	}
 }
