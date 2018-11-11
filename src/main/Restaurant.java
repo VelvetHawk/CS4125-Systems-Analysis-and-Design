@@ -1,6 +1,6 @@
 package main;
 
-import display.LoginPage;
+import views.RegisterLogin;
 
 public class Restaurant
 {

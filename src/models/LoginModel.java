@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 //package com.mvc.model;
-package main;
+package models;
 
 import java.sql.*;
 import java.sql.Connection;

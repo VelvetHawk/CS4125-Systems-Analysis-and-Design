@@ -6,15 +6,14 @@
 //package com.mvc.view;
 
 //import com.mvc.controller.LoginController;
-package main;
+package views;
+
+import controllers.LoginController;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 //import javaapplication5.LoginPage;
-import javax.swing.JOptionPane;
 import javax.swing.*;
 
 /**
