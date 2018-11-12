@@ -1,6 +1,6 @@
 package consumables.basics;
 
-import consumables.decorators.Consumable;
+import consumables.patterns.Consumable;
 
 public abstract class BasicFood implements Consumable
 {
