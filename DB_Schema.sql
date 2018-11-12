@@ -34,6 +34,18 @@ CREATE TABLE `Stock` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Account_Type`
+--
+
+DROP TABLE IF EXISTS `Account_Type`;
+CREATE TABLE `Account_Type` (
+	`Account_type_ID` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`Name` VARCHAR(50) NOT NULL
+) ENGINE=InnoDB;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Users`
 --
 
@@ -47,21 +59,10 @@ CREATE TABLE `Users` (
 	`Address` VARCHAR(255) NOT NULL,
 	`Phone` VARCHAR(20) NOT NULL,
 	`Points` INT UNSIGNED NOT NULL DEFAULT 0,
-	`Acc_type_ID` INT UNSIGNED NOT NULL DEFAULT 1,
+	`Account_type_ID` INT UNSIGNED NOT NULL DEFAULT 1,
 	`Date_created` DATETIME NOT NULL DEFAULT NOW(),
-	`Last_login` DATETIME NOT NULL DEFAULT NOW()
-) ENGINE=InnoDB;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Account_Type`
---
-
-DROP TABLE IF EXISTS `Account_Type`;
-CREATE TABLE `Account_Type` (
-	`Account_type_ID` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	`Name` VARCHAR(50) NOT NULL
+	`Last_login` DATETIME NOT NULL DEFAULT NOW(),
+	FOREIGN KEY(`Account_type_ID`) REFERENCES `Account_Type`(`Account_type_ID`)
 ) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
