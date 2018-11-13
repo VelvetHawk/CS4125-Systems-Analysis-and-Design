@@ -2,11 +2,16 @@ package data;
 
 import java.sql.Connection;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class SQLConnector implements DatabaseConnector
 {
 	Connection conn = null;
+    private Statement statement = null;
+    private PreparedStatement preparedStatement = null;
+    private ResultSet resultSet = null;
 	
 	@Override
 	public Connection getConnection() throws Exception
@@ -34,33 +39,78 @@ public class SQLConnector implements DatabaseConnector
        }
 		
 	}
-	
-	@Override
-	public boolean insert(String table, String[] columns, String[] values)
-	{
-		// TODO: Finish implementation
-		return false;
-	}
-	
-	@Override
-	public String[][] select(String table, String[] columns, String whereClause, String orderByClause)
-	{
-		// TODO: Finish implementation
-		return null;
-	}
-	
-	@Override
-	public boolean update(String table, String[] columns, String[] values, String whereClause)
-	{
-		// TODO: Finish implementation
-		return false;
-	}
-	
-	@Override
-	public boolean delete(String table, String whereClause)
-	{
-		// TODO: Finish implementation
-		return false;
-	}
+
+    public ResultSet select(String table, String[] columns, String whereClause, String orderByClause) {
+        String result = "";
+        try {
+            statement = conn.createStatement();
+            //resultSet = statement.executeQuery(SQLCmd);
+            //result = writeResultSet(resultSet);
+        } catch(Exception e) {
+            logError(e);
+
+        }
+        return resultSet;
+        //return result;
+    }
+
+    public boolean update(String table, String[] columns, String[] values, String whereClause) {
+        try {
+           // preparedStatement = conn.prepareStatement(SQLCmd);
+           // int rows = preparedStatement.executeUpdate();
+            return true;
+        } catch(Exception e) {
+            logError(e);
+            return false;
+        }
+    }
+
+    public boolean insert(String table, String[] columns, String[] values) {
+        String strQuery = "INSERT INTO $tablename values(default,?,?) ";
+        String sql =strQuery.replace("$tablename",table);
+        System.out.println(sql);
+	    int registerSuccess = 0;
+        try {
+            preparedStatement = conn.prepareStatement(sql);
+            //preparedStatement.setString(1, table);
+            for(int i=0;i<values.length;i++) {
+                preparedStatement.setString(i+1, values[i]);
+
+            }
+            System.out.println(preparedStatement);
+            registerSuccess = preparedStatement.executeUpdate();
+            if(registerSuccess>0){
+                return true;
+            }
+            else{
+                return false;
+            }
+
+
+        } catch(Exception e) {
+            logError(e);
+            return false;
+        }
+        //return registerSuccess;
+    }
+
+    public boolean delete(String table, String whereClause) {
+        try {
+            //preparedStatement = conn.prepareStatement(SQLCmd);
+            //int rows = preparedStatement.executeUpdate();
+            return true;
+        } catch(Exception e) {
+            logError(e);
+            return false;
+        }
+
+    }
+
+    private void logError(Exception e){
+        Logger.getLogger(SQLConnector.class.getName()).log(Level.SEVERE, null, e);
+    }
+
+
 }
+
 
