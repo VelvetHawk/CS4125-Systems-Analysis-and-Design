@@ -6,28 +6,31 @@ import java.sql.Connection;
 import data.SQLConnector;
 
 
-public class RegisterModel{
-
+public class RegisterModel
+{
     Connection conn = null;
     boolean alreadyRegistered = false;
     boolean registered = false;
     SQLConnector SQLconn = new SQLConnector();
     //SQLConnector sqlConn = new SQLConnector;
 
-    public RegisterModel() throws Exception {
-
+    public RegisterModel() throws Exception
+    {
         conn = SQLconn.getConnection();
     }
 
-    public boolean checkRegistered(String user, char[] pass){
+    public boolean checkRegistered(String user, char[] pass)
+    {
          return alreadyRegistered;
     }
 
-    public boolean getRegistered(){
+    public boolean getRegistered()
+    {
         return registered;
     }
 
-    public void registerUser(String user, char[] pass) throws Exception{
+    public void registerUser(String user, char[] pass) throws Exception
+    {
          String password = new String(pass);
          String [] columns = new String[2];
          String [] values = new String[2];
@@ -42,15 +45,11 @@ public class RegisterModel{
          ps.setString(2, password);
          int registerSuccess = ps.executeUpdate();
          */
-         if(registerSuccess){
+         if(registerSuccess) {
              registered = true;
-         }
-         else{
+         } else {
              registered = false;
          }
-
-
-
             //ps.close();
             conn.close();
     }

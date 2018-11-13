@@ -15,45 +15,39 @@ import data.SQLConnector;
  *
  * @author conor_000
  */
-public class LoginModel {
-   
-   Connection conn = null;
-   private boolean loginValid = false;
-   
-   public boolean getLogin(){
+public class LoginModel
+{
+    Connection conn = null;
+    private boolean loginValid = false;
+
+    public boolean getLogin()
+    {
        return loginValid;
-   }
-   
-   public void loginValidation(String user, char [] passChars ) throws Exception{
-       
-   
-   if(passChars!=null) { 
-       String pass=new String(passChars);
-       SQLConnector SQLconn = new SQLConnector();
-       conn = SQLconn.getConnection();
-	    String sql="SELECT username, password FROM TakeawayAccounts where username=? and password=?";
-        PreparedStatement ps=conn.prepareStatement(sql);
-        ps.setString(1,user);
-        ps.setString(2,pass);
-        ResultSet rs=ps.executeQuery();
-        if(rs.next()) {
-           //found
-           
-           loginValid = true;
-          
+    }
+
+    public void loginValidation(String user, char [] passChars ) throws Exception
+    {
+        if(passChars!=null)
+        {
+            String pass=new String(passChars);
+            SQLConnector SQLconn = new SQLConnector();
+            conn = SQLconn.getConnection();
+            String sql="SELECT username, password FROM TakeawayAccounts where username=? and password=?";
+            PreparedStatement ps=conn.prepareStatement(sql);
+            ps.setString(1,user);
+            ps.setString(2,pass);
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()) {
+               //found
+               loginValid = true;
+            } else {
+               //not found
+               loginValid = false;
+            }
+            rs.close();
+            ps.close();
+            conn.close();
         }
-        else{
-           //not found
-          
-           loginValid = false;
-           
-        }
-		
-        rs.close();
-        ps.close();
-        conn.close();
-       
-   }
-   }
+    }
 }
 
