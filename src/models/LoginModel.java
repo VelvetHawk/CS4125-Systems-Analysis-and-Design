@@ -24,7 +24,7 @@ public class LoginModel {
        return loginValid;
    }
    
-   public void loginValidation(String user, char [] passChars ) throws Exception{
+   public void loginValidation(String user, String passChars ) throws Exception{
        
    
    if(passChars!=null) { 

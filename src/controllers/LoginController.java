@@ -31,7 +31,7 @@ public class LoginController {
    
     
    
-   public void checkCredentials(String username, char[] password){
+   public void checkCredentials(String username, String password){
        
        
 

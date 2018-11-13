@@ -67,55 +67,17 @@ public class CartListPanel extends JPanel
 		constraints.gridy = nextRow();
 		constraints.gridwidth = itemColumns + 2;
 		this.add(new JSeparator(), constraints);
-		
-		// Item List
-		/*
-		cartList = new JPanel();
-		grid = new GridLayout(listItems.size(), itemColumns + 2, 10, 5);
-		cartList.setLayout(grid);
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setLayout(new ScrollPaneLayout());
-		scrollPane.add(cartList, constraints);
-		scrollPane.setWheelScrollingEnabled(true);
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		
-		constraints.gridx = column;
-		constraints.gridy = nextRow();
-		constraints.gridwidth = 3;
-		constraints.weightx = 2;
-		this.add(scrollPane, constraints);
-		cartList.setBorder(new LineBorder(Color.RED)); // REMOVE LATER
-		scrollPane.setBorder(new LineBorder(Color.RED)); // REMOVE LATER
-		constraints.weightx = 1;
-		*/
-		
-		constraints.gridx = column;
-		constraints.gridy = nextRow();
-		constraints.gridwidth = 3;
-		constraints.weighty = 1;
 
-//		JScrollPane scrollPane = new JScrollPane();
-//		cartList = new JPanel();
-//		grid = new GridLayout(listItems.size(), itemColumns + 2, 10, 5);
-//		cartList.setLayout(grid);
-//		scrollPane.add(cartList, constraints);
-//
-//		scrollPane.setWheelScrollingEnabled(true);
-//		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-//		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-//
-//		scrollPane.add(cartList, constraints);
-//		cartList.setBorder(new LineBorder(Color.RED)); // REMOVE LATER
-//		scrollPane.setBorder(new LineBorder(Color.RED)); // REMOVE LATER
-//		this.add(scrollPane, constraints);
-//
-//		cartList.setSize(400, 400);
-//		System.out.println("Viewport: " + scrollPane.getViewport());
+
+		
+		constraints.gridx = column;
+		constraints.gridy = nextRow();
+		constraints.gridwidth = 2;
+		constraints.weighty = 4;
+
 		
 		cartList = new JPanel();
-		grid = new GridLayout(listItems.size(), itemColumns + 2, 10, 5);
+		grid = new GridLayout(listItems.size(), itemColumns + 2, 20, 15);
 		cartList.setLayout(grid);
 		JScrollPane scrollPane = new JScrollPane(cartList);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
