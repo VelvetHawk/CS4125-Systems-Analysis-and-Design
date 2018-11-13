@@ -4,14 +4,14 @@ import consumables.Size;
 import consumables.patterns.Consumable;
 import consumables.patterns.Food;
 
-public class OnionRings extends Food
+public class Coleslaw extends Food
 {
-    public OnionRings(Consumable parent)
+    public Coleslaw(Consumable parent)
     {
         super(parent);
     }
 
-    public OnionRings(Consumable parent, Size size)
+    public Coleslaw(Consumable parent, Size size)
     {
         super(parent, size);
     }
@@ -19,7 +19,7 @@ public class OnionRings extends Food
     @Override
     public String getName()
     {
-        return "Onion Rings";
+        return "Coleslaw";
     }
 
     @Override
