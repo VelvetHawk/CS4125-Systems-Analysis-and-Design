@@ -6,6 +6,9 @@ import consumables.patterns.Food;
 
 public class Pizza extends Food
 {
+    public Pizza() {
+
+    }
     public Pizza(Consumable parent)
     {
         super(parent);

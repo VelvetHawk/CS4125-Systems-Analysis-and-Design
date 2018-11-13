@@ -8,7 +8,10 @@ public abstract class Food implements Consumable
 	protected Consumable parent;
 	
 	protected Size size;
-	
+
+	public Food() {
+
+	}
 	public Food(Consumable parent)
 	{
 		this.parent = parent;
