@@ -19,7 +19,7 @@ public class ClubOrange extends Drink
     @Override
     public String getName()
     {
-        return "ClubOrange";
+        return "Club Orange";
     }
 
     @Override
