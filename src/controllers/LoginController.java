@@ -11,7 +11,7 @@
 package controllers;
 
 import models.LoginModel;
-import views.LoginView;
+import display.views.LoginView;
 
 /**
  *

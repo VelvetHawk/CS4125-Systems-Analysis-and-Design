@@ -1,12 +1,9 @@
-package views;
+package display.views;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import views.LoginView;
-import views.RegisterView;
 
 public class RegisterLogin extends JFrame{
         JButton signInButton;

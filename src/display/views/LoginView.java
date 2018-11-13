@@ -6,7 +6,7 @@
 //package com.mvc.view;
 
 //import com.mvc.controller.LoginController;
-package views;
+package display.views;
 
 import controllers.LoginController;
 

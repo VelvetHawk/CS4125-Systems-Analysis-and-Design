@@ -1,4 +1,4 @@
-package views;
+package display.views;
 
 import controllers.RegisterController;
 
