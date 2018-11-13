@@ -4,14 +4,14 @@ import consumables.Size;
 import consumables.patterns.Consumable;
 import consumables.patterns.Food;
 
-public class Beef extends Food
+public class Pepperoni extends Food
 {
-    public Beef(Consumable parent)
+    public Pepperoni(Consumable parent)
     {
         super(parent);
     }
 
-    public Beef(Consumable parent, Size size)
+    public Pepperoni(Consumable parent, Size size)
     {
         super(parent, size);
     }
@@ -19,7 +19,7 @@ public class Beef extends Food
     @Override
     public String getName()
     {
-        return "Beef";
+        return "Pepperoni";
     }
 
     @Override
