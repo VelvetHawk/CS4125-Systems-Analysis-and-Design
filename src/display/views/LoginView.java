@@ -240,7 +240,7 @@ public class LoginView extends Application
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Login");
-        alert.setHeaderText("Look, an Information Dialog");
+        alert.setHeaderText("Login Filed, make sure the inputs are correct");
         alert.setContentText(message);
 
         alert.showAndWait();

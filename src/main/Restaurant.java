@@ -1,5 +1,6 @@
 package main;
 
+import consumables.patterns.Food;
 import display.components.CartListPanel;
 import display.views.LoginView;
 import display.views.RegisterLogin;

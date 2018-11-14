@@ -1,17 +1,17 @@
-package consumables.toppings;
+package consumables.side;
 
 import consumables.Size;
 import consumables.patterns.Consumable;
 import consumables.patterns.Food;
 
-public class Beef extends Food
+public class GarlicBread extends Food
 {
-    public Beef(Consumable parent)
+    public GarlicBread(Consumable parent)
     {
         super(parent);
     }
 
-    public Beef(Consumable parent, Size size)
+    public GarlicBread(Consumable parent, Size size)
     {
         super(parent, size);
     }
@@ -19,7 +19,7 @@ public class Beef extends Food
     @Override
     public String getName()
     {
-        return "Beef";
+        return "Garlic bread";
     }
 
     @Override

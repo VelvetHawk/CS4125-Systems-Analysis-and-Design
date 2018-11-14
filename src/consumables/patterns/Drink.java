@@ -8,6 +8,10 @@ public abstract class Drink implements Consumable
 	protected Consumable parent;
 	
 	protected Size size;
+
+	public Drink() {
+
+	}
 	
 	public Drink(Consumable parent)
 	{

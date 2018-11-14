@@ -16,43 +16,45 @@ import data.SQLConnector;
  * @author conor_000
  */
 public class LoginModel {
-   
+
    Connection conn = null;
    private boolean loginValid = false;
-   
+
    public boolean getLogin(){
        return loginValid;
    }
-   
+
    public void loginValidation(String user, String passChars ) throws Exception{
-       
-   
-   if(passChars!=null) { 
+
+
+   if(passChars!=null) {
        String pass=new String(passChars);
        SQLConnector SQLconn = new SQLConnector();
        conn = SQLconn.getConnection();
-	    String sql="SELECT username, password FROM TakeawayAccounts where username=? and password=?";
+
+	    String sql="SELECT Username, Password FROM Users where username=? and password=?";
         PreparedStatement ps=conn.prepareStatement(sql);
         ps.setString(1,user);
         ps.setString(2,pass);
         ResultSet rs=ps.executeQuery();
+        System.out.println(rs);
         if(rs.next()) {
            //found
-           
+
            loginValid = true;
-          
+
         }
         else{
            //not found
-          
+
            loginValid = false;
-           
+
         }
-		
+
         rs.close();
         ps.close();
         conn.close();
-       
+
    }
    }
 }
