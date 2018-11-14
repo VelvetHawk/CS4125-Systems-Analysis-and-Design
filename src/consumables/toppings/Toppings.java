@@ -1,6 +1,7 @@
 package consumables.toppings;
 
-public enum Toppings {
+public enum Toppings
+{
     BEEF,
     CHEESE,
     CHICKEN,

@@ -3,9 +3,10 @@ package consumables.factories;
 import consumables.basics.BasicTopping;
 import consumables.decorators.Consumable;
 import consumables.decorators.ConsumableFactory;
-import consumables.toppings.Beef;
-import consumables.toppings.Cheese;
-import consumables.toppings.Toppings;
+import consumables.drinks.Drinks;
+import consumables.food.Food;
+import consumables.side.Sides;
+import consumables.toppings.*;
 
 public class ToppingsFactory extends ConsumableFactory
 {
@@ -24,8 +25,50 @@ public class ToppingsFactory extends ConsumableFactory
                 return new Beef(addTo);
             case CHEESE:
                 return new Cheese(addTo);
+            case CHICKEN:
+                return new Chicken(addTo);
+            case HAM:
+                return new Ham(addTo);
+            case MUSHROOM:
+                return new Mushroom(addTo);
+            case PEPPERONI:
+                return new Pepperoni(addTo);
+            case PINEAPPLE:
+                return new Pineapple(addTo);
+            case SAUSAGE:
+                return new Sausage(addTo);
             default:
                 return null;
         }
+    }
+
+    @Override
+    public Consumable getSide() {
+        return null;
+    }
+
+    @Override
+    public Consumable addSide(Sides type, Consumable addTo) {
+        return null;
+    }
+
+    @Override
+    public Consumable getDrink() {
+        return null;
+    }
+
+    @Override
+    public Consumable addDrink(Drinks type, Consumable addTo) {
+        return null;
+    }
+
+    @Override
+    public Consumable getFood() {
+        return null;
+    }
+
+    @Override
+    public Consumable addFood(Food type, Consumable addTo) {
+        return null;
     }
 }
