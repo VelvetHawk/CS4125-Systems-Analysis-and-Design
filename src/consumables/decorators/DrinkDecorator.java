@@ -1,24 +1,21 @@
-package consumables.patterns;
+package consumables.decorators;
 
 import consumables.Size;
 
-public abstract class Food implements Consumable
+public abstract class DrinkDecorator implements Consumable
 {
 	// Decorator chain
 	protected Consumable parent;
 	
 	protected Size size;
-
-	public Food() {
-
-	}
-	public Food(Consumable parent)
+	
+	public DrinkDecorator(Consumable parent)
 	{
 		this.parent = parent;
 		size = Size.SMALL; // Default
 	}
 	
-	public Food(Consumable parent, Size size)
+	public DrinkDecorator(Consumable parent, Size size)
 	{
 		this.parent = parent;
 		this.size = size;

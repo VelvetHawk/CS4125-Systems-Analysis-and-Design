@@ -1,11 +1,14 @@
 package consumables.basics;
 
-import consumables.patterns.Consumable;
+import consumables.decorators.Consumable;
 
-public abstract class BasicSide implements Consumable
+public class BasicSide implements Consumable
 {
 	@Override
-	public abstract String getName();
+	public String getName()
+	{
+		return "";
+	}
 	
 	@Override
 	public double getCost()

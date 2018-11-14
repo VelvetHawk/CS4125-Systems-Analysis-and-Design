@@ -1,10 +1,10 @@
 package consumables.drinks;
 
 import consumables.Size;
-import consumables.patterns.Consumable;
-import consumables.patterns.Drink;
+import consumables.decorators.Consumable;
+import consumables.decorators.DrinkDecorator;
 
-public class ClubOrange extends Drink
+public class ClubOrange extends DrinkDecorator
 {
     public ClubOrange(Consumable parent)
     {

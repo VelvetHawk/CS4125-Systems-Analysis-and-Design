@@ -1,14 +1,11 @@
 package consumables.food;
 
 import consumables.Size;
-import consumables.patterns.Consumable;
-import consumables.patterns.Food;
+import consumables.decorators.Consumable;
+import consumables.decorators.FoodDecorator;
 
-public class Pizza extends Food
+public class Pizza extends FoodDecorator
 {
-    public Pizza() {
-
-    }
     public Pizza(Consumable parent)
     {
         super(parent);

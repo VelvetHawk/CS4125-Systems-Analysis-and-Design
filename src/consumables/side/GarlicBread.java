@@ -1,10 +1,10 @@
 package consumables.side;
 
 import consumables.Size;
-import consumables.patterns.Consumable;
-import consumables.patterns.Food;
+import consumables.decorators.Consumable;
+import consumables.decorators.FoodDecorator;
 
-public class GarlicBread extends Food
+public class GarlicBread extends FoodDecorator
 {
     public GarlicBread(Consumable parent)
     {

@@ -1,10 +1,10 @@
 package consumables.toppings;
 
 import consumables.Size;
-import consumables.patterns.Consumable;
-import consumables.patterns.Food;
+import consumables.decorators.Consumable;
+import consumables.decorators.FoodDecorator;
 
-public class Sausage extends Food
+public class Sausage extends FoodDecorator
 {
     public Sausage(Consumable parent)
     {

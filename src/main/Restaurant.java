@@ -1,22 +1,20 @@
 package main;
 
-import consumables.patterns.Food;
 import display.components.CartListPanel;
 import display.views.RegisterLogin;
 
 import javax.swing.*;
-import consumables.patterns.Consumable;
-import consumables.patterns.ConsumableFactory;
-import display.views.RegisterLogin;
+import consumables.decorators.Consumable;
+import consumables.decorators.ConsumableFactory;
 
 public class Restaurant
 {
 	public static void main(String[] args)
 	{
 		//RegisterLogin rl = new RegisterLogin();
-		ConsumableFactory c = new ConsumableFactory();
-        Consumable f = c.getConsumable("pizza");
-		RegisterLogin rl = new RegisterLogin();
+		//ConsumableFactory c = new ConsumableFactory();
+        //Consumable f = c.getConsumable("pizza");
+		//RegisterLogin rl = new RegisterLogin();
 		
 		
 		// REMOVE LATER, FOR TESTING

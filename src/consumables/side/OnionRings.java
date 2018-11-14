@@ -1,10 +1,10 @@
 package consumables.side;
 
 import consumables.Size;
-import consumables.patterns.Consumable;
-import consumables.patterns.Food;
+import consumables.decorators.Consumable;
+import consumables.decorators.FoodDecorator;
 
-public class OnionRings extends Food
+public class OnionRings extends FoodDecorator
 {
     public OnionRings(Consumable parent)
     {

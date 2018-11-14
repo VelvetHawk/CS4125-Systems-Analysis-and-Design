@@ -1,10 +1,10 @@
 package consumables.side;
 
 import consumables.Size;
-import consumables.patterns.Consumable;
-import consumables.patterns.Food;
+import consumables.decorators.Consumable;
+import consumables.decorators.FoodDecorator;
 
-public class Coleslaw extends Food
+public class Coleslaw extends FoodDecorator
 {
     public Coleslaw(Consumable parent)
     {

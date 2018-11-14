@@ -1,4 +1,4 @@
-package consumables.patterns;
+package consumables.decorators;
 
 public interface Consumable
 {

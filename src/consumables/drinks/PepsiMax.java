@@ -1,10 +1,10 @@
 package consumables.drinks;
 
 import consumables.Size;
-import consumables.patterns.Consumable;
-import consumables.patterns.Drink;
+import consumables.decorators.Consumable;
+import consumables.decorators.DrinkDecorator;
 
-public class PepsiMax extends Drink
+public class PepsiMax extends DrinkDecorator
 {
     public PepsiMax(Consumable parent)
     {
