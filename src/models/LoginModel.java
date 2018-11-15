@@ -6,56 +6,28 @@
 //package com.mvc.model;
 package models;
 
-import java.sql.*;
 import java.sql.Connection;
-
-import data.SQLConnector;
 
 /**
  *
  * @author conor_000
  */
 public class LoginModel {
+    private Connection conn = null;
+    private boolean loginValid = false;
 
-   Connection conn = null;
-   private boolean loginValid = false;
-
-   public boolean getLogin(){
+    public boolean getLoginValid(){
        return loginValid;
-   }
+    }
 
-   public void loginValidation(String user, String passChars ) throws Exception{
+    public void setConnection(Connection conn ){
+        this.conn = conn;
+    }
+
+    public Connection getConnection(){
+        return conn;
+    }
 
 
-   if(passChars!=null) {
-       String pass=new String(passChars);
-       SQLConnector SQLconn = new SQLConnector();
-       conn = SQLconn.getConnection();
-
-	    String sql="SELECT Username, Password FROM Users where username=? and password=?";
-        PreparedStatement ps=conn.prepareStatement(sql);
-        ps.setString(1,user);
-        ps.setString(2,pass);
-        ResultSet rs=ps.executeQuery();
-        System.out.println(rs);
-        if(rs.next()) {
-           //found
-
-           loginValid = true;
-
-        }
-        else{
-           //not found
-
-           loginValid = false;
-
-        }
-
-        rs.close();
-        ps.close();
-        conn.close();
-
-   }
-   }
 }
 

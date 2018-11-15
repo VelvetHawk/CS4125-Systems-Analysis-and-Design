@@ -175,7 +175,7 @@ public class LoginView extends Application
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
 
-        LoginController controller = new LoginController(this);
+        LoginController controller = new LoginController(this );
 
         //controller.ButtonHandler handler = new controller.ButtonHandler();
 
