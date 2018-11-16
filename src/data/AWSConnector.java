@@ -1,14 +1,15 @@
 package data;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 
 public class AWSConnector implements DatabaseConnector
 {
 	@Override
-	public Connection getConnection()
+	public void getConnection()
 	{
 		// TODO: Create implementation
-		return null;
+		//return null;
 	}
 	
 	
@@ -20,7 +21,7 @@ public class AWSConnector implements DatabaseConnector
 	}
 	
 	@Override
-	public String[][] select(String table, String[] columns, String whereClause, String orderByClause)
+	public ResultSet select(String table, String[] columns, String whereClause, String orderByClause)
 	{
 		// TODO: Finish implementation
 		return null;
@@ -40,3 +41,4 @@ public class AWSConnector implements DatabaseConnector
 		return false;
 	}
 }
+
