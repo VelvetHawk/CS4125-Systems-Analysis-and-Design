@@ -37,7 +37,7 @@ public class SQLConnectorTest {
         }
         String [] columns = {"username", "password"};
         String [] values = {"Mikeyo", "pass123"};
-        boolean updated = sqlconnect.update("takeawayaccounts", columns, values, "WHERE ID = 4" );
+        boolean updated = sqlconnect.update("users", columns, values, "WHERE User_ID = 4" );
         System.out.println(updated);
         assertEquals(updated,true);
         assertTrue(updated);
@@ -53,22 +53,22 @@ public class SQLConnectorTest {
         catch(Exception e){
 
         }
-        ResultSet rs = sqlconnect.select("takeawayaccounts", columns, null, null);
+        ResultSet rs = sqlconnect.select("users", columns, null, null);
     }
 
     @Test
     public void testInsertDelete(){
         String [] columns = {"username", "password"};
-        String [] values = {"testuser", "testpass"};
+        String [] values = {"default", "'jim'", "'bloggs'", "'testuser'", "'pass'", "'@gmail'", "'ennis'", "'087'", "default", "default", "default", "default"};
         try {
             sqlconnect.getConnection();
         }
         catch(Exception e){
 
         }
-        boolean insertSuccess = sqlconnect.insert("takeawayaccounts", columns, values);
+        boolean insertSuccess = sqlconnect.insert("restaurant_db.users", columns, values);
         assertTrue(insertSuccess);
-        boolean deleteSuccess = sqlconnect.delete("takeawayaccounts", "WHERE username = 'testuser'");
+        boolean deleteSuccess = sqlconnect.delete("restaurant_db.users", "WHERE username = 'testuser'");
         assertTrue(deleteSuccess);
 
     }
@@ -77,4 +77,6 @@ public class SQLConnectorTest {
 
 
 }
+
+
 
