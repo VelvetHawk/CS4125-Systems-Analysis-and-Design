@@ -6,43 +6,42 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 public class SQLConnector implements DatabaseConnector
 {
-	Connection conn = null;
+    Connection conn = null;
     private Statement statement = null;
     private PreparedStatement preparedStatement = null;
     private ResultSet rs = null;
 
-	
-	@Override
-	public void getConnection() throws Exception
-	{
-		try{
-        Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost/accounts?"+ "user=sqluser&password=sqluserpw");
 
-        //return conn;
-       }
-       catch(ClassNotFoundException exc){
+    @Override
+    public void getConnection() throws Exception
+    {
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/restaurant_db?"+ "user=sqluser&password=sqluserpw");
+
+            //return conn;
+        }
+        catch(ClassNotFoundException exc){
             System.out.println(exc);
             exc.printStackTrace();
             throw exc;
-           
-           //System.out.println("Could not find data");
-       }
-       
-      catch(SQLException exc){
-          exc.printStackTrace();
-          throw exc;
-      }
-       finally{
-               
-       }
-		
-	}
+
+            //System.out.println("Could not find data");
+        }
+
+        catch(SQLException exc){
+            exc.printStackTrace();
+            throw exc;
+        }
+        finally{
+
+        }
+
+    }
 
     public ResultSet select(String table, String[] columns, String whereClause, String orderByClause) {
         String result = "";
@@ -73,6 +72,7 @@ public class SQLConnector implements DatabaseConnector
             String [] row = new String[numberColumns];
             //result = writeResultSet(resultSet);
             ArrayList allRows = new ArrayList();
+            /*
             while(rs.next()){
                 //System.out.println(rs);
                 String[] currentRow = new String[numberColumns];
@@ -85,10 +85,10 @@ public class SQLConnector implements DatabaseConnector
                 for(int i=0;i<allRows.size();i++){
                     String [] r = (String[])allRows.get(i);
                     for(int j=0;j<r.length;j++){
-                        
+
                     }
                 }
-                /*
+
                 for(int i=0;i<allRows.size();i++){
                      String [] r = (String [])allRows.get(i);
                      arrayRows[i] = r;
@@ -101,10 +101,11 @@ public class SQLConnector implements DatabaseConnector
                     }
                     System.out.println();
                 }
-                */
+
                 //System.out.println(allRows);
                 //String [][] rowsFound = Arrays.toString(allRows.get(i));
             }
+            */
             //System.out.println(allRows);
         } catch(Exception e) {
             logError(e);
@@ -117,10 +118,10 @@ public class SQLConnector implements DatabaseConnector
     public boolean update(String table, String[] columns, String[] values, String whereClause) {
         String strQuery = "Update $tablename SET";
         for(int i =0;i<columns.length;i++){
-              String set = " "+ columns[i] + "=" + "'" + values[i] + "'";
-              strQuery +=set;
+            String set = " "+ columns[i] + "=" + "'" + values[i] + "'";
+            strQuery +=set;
             if(i+1<columns.length){
-              strQuery+=", ";
+                strQuery+=", ";
             }
         }
         if(strQuery!=null) {
@@ -131,13 +132,6 @@ public class SQLConnector implements DatabaseConnector
         int registerSuccess = 0;
         try {
             preparedStatement = conn.prepareStatement(sql);
-            //preparedStatement.setString(1, table);
-            /*
-            for(int i=0;i<values.length;i++) {
-                preparedStatement.setString(i+1, values[i]);
-
-            }
-            */
             System.out.println(preparedStatement);
             registerSuccess = preparedStatement.executeUpdate();
             if(registerSuccess>0){
@@ -155,17 +149,28 @@ public class SQLConnector implements DatabaseConnector
     }
 
     public boolean insert(String table, String[] columns, String[] values) {
-        String strQuery = "INSERT INTO $tablename values(default,?,?) ";
+        String strQuery = "INSERT INTO $tablename values( ";
+        for(int i=0;i<values.length;i++){
+            //if value to be inserted isn't default add '' to make it valid
+            if(values[i]!="default") {
+                strQuery += "'" + values[i] + "'";
+            }
+            else{
+                strQuery += values[i];
+            }
+            if(i+1<values.length){
+                strQuery+=", ";
+            }
+
+        }
+
+        strQuery+= ")";
         String sql =strQuery.replace("$tablename",table);
         System.out.println(sql);
-	    int registerSuccess = 0;
+        int registerSuccess = 0;
         try {
             preparedStatement = conn.prepareStatement(sql);
             //preparedStatement.setString(1, table);
-            for(int i=0;i<values.length;i++) {
-                preparedStatement.setString(i+1, values[i]);
-
-            }
             System.out.println(preparedStatement);
             registerSuccess = preparedStatement.executeUpdate();
             if(registerSuccess>0){
@@ -187,15 +192,10 @@ public class SQLConnector implements DatabaseConnector
         String strQuery = "DELETE FROM $tablename";
         String sql =strQuery.replace("$tablename",table);
         sql += " " + whereClause
-;        System.out.println(sql);
+        ;        System.out.println(sql);
         int deleteSuccess = 0;
         try {
-
             preparedStatement = conn.prepareStatement(sql);
-
-
-
-
             System.out.println(preparedStatement);
             deleteSuccess = preparedStatement.executeUpdate();
             if(deleteSuccess>0){
@@ -217,11 +217,12 @@ public class SQLConnector implements DatabaseConnector
     }
 
     public void closeConnection() throws Exception{
-	    conn.close();
+        conn.close();
     }
 
 
 }
+
 
 
 
