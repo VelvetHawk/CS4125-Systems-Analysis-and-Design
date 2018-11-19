@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 public class RegisterView
 {
-
+    private RegisterController controller;
 
     private LoginView login;
     private Button back, registrationbtn, clear_form_btn;
@@ -193,13 +193,14 @@ public class RegisterView
                 alert.showAndWait();
 
             }else{
-                RegisterController controller = null;
+                controller = null;
                 try {
                     controller = new RegisterController(this);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 try {
+                    // account type is setup as default to Customers.
                     controller.checkRegistration(name, surname, username, passwordChar, email, address, phone);
                 } catch (Exception e) {
                     e.printStackTrace();
