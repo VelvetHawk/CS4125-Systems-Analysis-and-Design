@@ -7,18 +7,21 @@ import display.views.LoginView;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class RegisterController {
+public class RegisterController
+{
     RegisterModel model;
     RegisterView view;
     boolean registered;
     boolean alreadyRegistered = true;
 
-    public RegisterController(RegisterView view) throws Exception{
+    public RegisterController(RegisterView view) throws Exception
+    {
         model = new RegisterModel();
         this.view = view;
     }
 
-    public void checkRegistration(String name, String surname, String user, char[] pass, String email, String address, String phone) throws Exception{
+    public void checkRegistration(String name, String surname, String user, char[] pass, String email, String address, String phone) throws Exception
+    {
         try {
             alreadyRegistered = model.checkRegistered(user, pass);
             if (!alreadyRegistered) {

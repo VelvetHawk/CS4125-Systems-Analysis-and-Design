@@ -15,17 +15,18 @@ import data.SQLConnector;
  *
  * @author conor_000
  */
-public class LoginModel {
-
+public class LoginModel
+{
     Connection conn = null;
     private boolean loginValid = false;
 
-    public boolean getLogin(){
+    public boolean getLogin()
+    {
         return loginValid;
     }
 
-    public void loginValidation(String user, char [] passChars ) throws Exception{
-
+    public void loginValidation(String user, char [] passChars ) throws Exception
+    {
         if(passChars!=null) {
             String pass=new String(passChars);
             //add '' to values to allow them to be added to sql queries
@@ -37,21 +38,15 @@ public class LoginModel {
             ResultSet rs = SQLconn.select("users", columns, " WHERE username =" + user + " AND PASSWORD =" + pass, null );
             if(rs.next()) {
                 //found
-
                 loginValid = true;
-
-            }
-            else{
+            } else {
                 //not found
-
                 loginValid = false;
-
             }
 
             System.out.println(loginValid);
             rs.close();
             SQLconn.closeConnection();
-
         }
     }
 }

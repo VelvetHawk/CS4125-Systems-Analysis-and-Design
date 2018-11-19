@@ -1,20 +1,21 @@
 package consumables.states;
 
-public class Orders {
-   private State state;
+public class Orders
+{
+    private State state;
 
-   public Orders(){
+    public Orders()
+    {
+        state = null;
+    }
 
-      state = null;
-   }
+    public void setState(State state)
+    {
+        this.state = state;
+    }
 
-   public void setState(State state){
-
-      this.state = state;
-   }
-
-   public State getState(){
-
-      return state;
-   }
+    public State getState()
+    {
+        return state;
+    }
 }

@@ -28,13 +28,13 @@ public class RegisterView
     private Scene scene;
     private Text scenetitle;
 
-    public RegisterView() {
-    }
+    public RegisterView()
+    {
 
+    }
 
     public void createUser()
     {
-
         // set the title to Registration
         Stage reg_stage = new Stage();
         reg_stage.setTitle("Create User ");
@@ -74,7 +74,6 @@ public class RegisterView
         last_login = new Label("Last Login");
         grid.add(last_login, 0 , 11);
         */
-
 
         // all the textfields are added here for the above coded labels
         nameTextField = new TextField();
@@ -184,7 +183,8 @@ public class RegisterView
 
 
             if(name.isEmpty() || surname.isEmpty() || email.isEmpty() || address.isEmpty() ||
-                    phone.isEmpty() || password.isEmpty() || username.isEmpty() || passwordChar.length ==0){
+                    phone.isEmpty() || password.isEmpty() || username.isEmpty() || passwordChar.length ==0)
+            {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Information Dialog");
                 alert.setHeaderText("Creating New user");
@@ -192,7 +192,7 @@ public class RegisterView
 
                 alert.showAndWait();
 
-            }else{
+            } else {
                 controller = null;
                 try {
                     controller = new RegisterController(this);
@@ -218,15 +218,14 @@ public class RegisterView
             clearForm();
         });
 
-
-
         scene = new Scene(grid, 500, 500);
         reg_stage.setScene(scene);
         reg_stage.show();
     }
 
     // a method that clears the form inputs
-    public void clearForm(){
+    public void clearForm()
+    {
         nameTextField.setText("");
         surnameTextField.setText("");
         emailTextField.setText("");
@@ -235,25 +234,18 @@ public class RegisterView
         pointsTextField.setText("");
         //account_type_IDTextField.setText("");
         password_TextField.setText("");
-
         System.out.println("you are pressing the clear button");
-
     }
 
-    public void setMessage(String message){
+    public void setMessage(String message)
+    {
         System.out.println(message);
-
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
         alert.setHeaderText("Look, an Information Dialog");
         alert.setContentText(message);
-
         alert.showAndWait();
-
         //msg = new JLabel(message);
         //add(msg);
     }
-
-
-
 }

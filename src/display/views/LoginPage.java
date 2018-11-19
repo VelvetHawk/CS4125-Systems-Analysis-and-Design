@@ -20,8 +20,8 @@ public class LoginPage extends JFrame
     private Connection connect = null;
     Connection conn = null;
 
-    public LoginPage() {
-
+    public LoginPage()
+    {
         super("Log in!");
         setLayout(new FlowLayout());
         setVisible(true);
@@ -47,7 +47,8 @@ public class LoginPage extends JFrame
         submitButton.addActionListener(handler);
     }
 
-    private class ButtonHandler implements ActionListener {
+    private class ButtonHandler implements ActionListener
+    {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
@@ -56,8 +57,8 @@ public class LoginPage extends JFrame
                 Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        public void loginValidation() throws Exception {
-
+        public void loginValidation() throws Exception
+        {
             String user = nameText.getText();
             char [] passChars = passwordField.getPassword();
             if(passChars!=null) {

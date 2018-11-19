@@ -41,10 +41,9 @@ public class RegisterModel{
         values[10] = "default";
         values[11] = "default";
         boolean registerSuccess = SQLconn.insert("users", columns, values);
-        if(registerSuccess){
+        if (registerSuccess) {
             registered = true;
-        }
-        else{
+        } else {
             registered = false;
         }
         

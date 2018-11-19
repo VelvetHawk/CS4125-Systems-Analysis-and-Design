@@ -2,7 +2,7 @@ package main;
 
 import display.components.CartListPanel;
 import display.views.LoginView;
-import display.views.RegisterLogin;
+import display.views.RegisterView;
 
 import javax.swing.*;
 import consumables.decorators.Consumable;
@@ -12,11 +12,11 @@ import javafx.stage.Stage;
 
 import static javafx.application.Application.launch;
 
-public class Restaurant extends Application {
+public class Restaurant extends Application
+{
     private LoginView loginView;
 	public static void main(String[] args)
 	{
-
 	    launch(args);
 		//RegisterLogin rl = new RegisterLogin();
 		//ConsumableFactory c = new ConsumableFactory();

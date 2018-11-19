@@ -42,6 +42,6 @@ public class LoginController
             }
         } catch (Exception ex) {
            //Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
-       }
-   }
+        }
+    }
 }

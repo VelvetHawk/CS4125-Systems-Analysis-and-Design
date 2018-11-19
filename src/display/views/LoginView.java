@@ -45,7 +45,6 @@ public class LoginView extends Application
     }
     */
 
-
     @Override
     public void start(Stage primaryStage)
     {
@@ -89,7 +88,6 @@ public class LoginView extends Application
         grid.add(registrationbtn,1,4);
 
         // clear button
-
         clearbtn = new Button("Clear");
         hbtn1 = new HBox(10);
         hbtn1.setAlignment(Pos.BOTTOM_CENTER);
@@ -102,7 +100,6 @@ public class LoginView extends Application
         LoginController controller = new LoginController(this );
 
         //controller.ButtonHandler handler = new controller.ButtonHandler();
-
 
         // login button action
         loginbtn.setOnAction(actionEvent -> {
@@ -123,8 +120,6 @@ public class LoginView extends Application
                 // check in the login controller if the user and password are correct.
                 controller.checkCredentials(user, password1);
             }
-
-
             //System.out.println("Name "+userTextField.getText()+"\n"+"Password "+password_field.getText());
         });
         // clear button action
@@ -142,37 +137,34 @@ public class LoginView extends Application
             clear_loging_textFields();
         });
 
-
-
-
         scene = new Scene(grid, 400, 300);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
     // clear text fields
-    public void clear_loging_textFields(){
+    public void clear_loging_textFields()
+    {
         userTextField.setText("");
         password_field.setText("");
     }
-    // create acount class method that class the Registration class, createUser is method in that class
-    public void createAccount(){
 
+    // create acount class method that class the Registration class, createUser is method in that class
+    public void createAccount()
+    {
         registration = new RegisterView();
         registration.createUser();
     }
 
-    public void setMessage(String message){
+    public void setMessage(String message)
+    {
         System.out.println(message);
-
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Login");
         alert.setHeaderText("Login, Information");
         alert.setContentText(message);
-
         alert.showAndWait();
         //msg = new JLabel(message);
         //add(msg);
     }
-
-
 }

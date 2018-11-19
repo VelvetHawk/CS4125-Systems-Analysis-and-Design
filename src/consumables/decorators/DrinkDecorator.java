@@ -6,7 +6,6 @@ public abstract class DrinkDecorator implements Consumable
 {
 	// Decorator chain
 	protected Consumable parent;
-	
 	protected Size size;
 	
 	public DrinkDecorator(Consumable parent)

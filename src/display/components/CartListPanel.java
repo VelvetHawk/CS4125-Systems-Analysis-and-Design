@@ -223,7 +223,6 @@ public class CartListPanel extends JPanel
 		totalAmountLabel.setText(Character.toString(currencySymbol) + " " + String.format("%.2f", totalAmount));
 	}
 	
-	
 	/**
 	 *  The panel needs to be extensible
 	 *  The list needs to be able to expand and contract dynamically
@@ -232,6 +231,4 @@ public class CartListPanel extends JPanel
 	 *
 	 *
 	 */
-	
-	
 }
