@@ -44,4 +44,7 @@ public class LoginController
            //Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public boolean getLoginValid(){
+        return this.loginValid;
+    }
 }
