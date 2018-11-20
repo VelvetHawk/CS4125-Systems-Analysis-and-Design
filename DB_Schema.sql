@@ -161,6 +161,11 @@ CREATE TABLE `Reviews` (
 -- Default SQL Values
 --
 
+-- Default Account
+
+CREATE USER 'sqluser' IDENTIFIED BY 'sqlpassword';
+GRANT USAGE ON *.* TO `sqluser`@`` IDENTIFIED BY 'sqlpassword';
+
 -- Default Account types
 
 INSERT INTO `Account_Type` (`Name`) VALUES ("CUSTOMER");
