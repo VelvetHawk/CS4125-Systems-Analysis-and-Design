@@ -20,7 +20,8 @@ public class SQLConnector implements DatabaseConnector
     {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/restaurant_db?"+ "user=sqluser&password=sqluserpw");
+            conn = DriverManager.getConnection(
+                    "jdbc:mysql://localhost/Restaurant_DB?"+ "user=sqluser&password=sqlpw");
             //return conn;
         } catch(ClassNotFoundException exc) {
             System.out.println(exc);
