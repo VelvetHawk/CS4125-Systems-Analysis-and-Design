@@ -1,7 +1,7 @@
 package controllers;
 
 import display.views.RegisterView;
-import data.RegisterModel;
+import models.RegisterModel;
 import display.views.LoginView;
 
 import java.util.logging.Level;
