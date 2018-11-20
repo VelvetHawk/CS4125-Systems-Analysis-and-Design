@@ -163,8 +163,9 @@ CREATE TABLE `Reviews` (
 
 -- Default Account
 
-CREATE USER 'sqluser' IDENTIFIED BY 'sqlpassword';
-GRANT USAGE ON *.* TO `sqluser`@`%` IDENTIFIED BY 'sqlpassword';
+CREATE USER 'sqluser' IDENTIFIED BY 'sqlpw';
+GRANT ALL ON *.* to 'sqluser'@localhost IDENTIFIED BY 'sqlpw';
+GRANT ALL ON *.* to 'sqluser'@'%' IDENTIFIED BY 'sqlpw';
 
 -- Default Account types
 
