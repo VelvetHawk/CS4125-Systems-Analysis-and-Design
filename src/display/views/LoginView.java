@@ -30,7 +30,7 @@ import javafx.stage.Stage;
 public class LoginView extends Application
 {
     private RegisterView registration;
-
+    private MenusView menusView;
     private Button loginbtn, registrationbtn, clearbtn;
     private HBox hbBtn, hbtn1;
     private TextField userTextField;
@@ -103,6 +103,7 @@ public class LoginView extends Application
 
         // login button action
         loginbtn.setOnAction(actionEvent -> {
+            boolean userIsLoggedIn = false;
             actiontarget.setFill(Color.FIREBRICK);
             actiontarget.setText("Sign in button pressed");
             String user = userTextField.getText();
@@ -118,7 +119,13 @@ public class LoginView extends Application
                 alert.showAndWait();
             }else{
                 // check in the login controller if the user and password are correct.
+
                 controller.checkCredentials(user, password1);
+                if(controller.getLoginValid() == true){
+                    primaryStage.close();
+                    displayMenu();
+                }
+
             }
             //System.out.println("Name "+userTextField.getText()+"\n"+"Password "+password_field.getText());
         });
@@ -166,5 +173,10 @@ public class LoginView extends Application
         alert.showAndWait();
         //msg = new JLabel(message);
         //add(msg);
+    }
+
+    public void displayMenu(){
+        menusView = new MenusView();
+        menusView.startMenu();
     }
 }
