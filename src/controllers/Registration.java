@@ -129,7 +129,7 @@ public class Registration implements Initializable , ControlledScreen {
         {
             setMessage("Please complete the form before press the button"); // popup message
 
-        }else if (password_Field != password_Field1){
+        }else if (!password_Field.getText().equals(password_Field1.getText())){
             setMessage("Password field not matched");
         }else{
 
