@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="533.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Registration">
+   <children>
+      <ImageView fitHeight="646.0" fitWidth="952.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" scaleY="1.25">
+         <image>
+            <Image url="@../img/register.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="215.0" layoutY="14.0" opacity="0.66" prefHeight="360.0" prefWidth="371.0" style="-fx-background-color: grey;">
+         <children>
+            <Text fill="#000dff" layoutX="24.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="77.2060546875" />
+            <Text fill="#000dff" layoutX="24.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="surname:" wrappingWidth="77.2060546875" />
+            <Text fill="#000dff" layoutX="24.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" wrappingWidth="77.2060546875" />
+            <Text fill="#000dff" layoutX="24.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" wrappingWidth="77.2060546875" />
+            <Text fill="#000dff" layoutX="24.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="77.2060546875" />
+            <Text fill="#000dff" layoutX="15.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password:" wrappingWidth="122.2060546875" />
+            <Text fill="#000dff" layoutX="24.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" wrappingWidth="105.2060546875" />
+            <Text fill="#000dff" layoutX="24.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone:" wrappingWidth="105.2060546875" />
+            <TextField layoutX="148.0" layoutY="25.0" />
+            <TextField layoutX="148.0" layoutY="57.0" />
+            <TextField layoutX="148.0" layoutY="91.0" />
+            <TextField layoutX="148.0" layoutY="128.0" />
+            <TextField layoutX="148.0" layoutY="162.0" />
+            <TextField layoutX="148.0" layoutY="202.0" />
+            <TextField layoutX="148.0" layoutY="240.0" />
+            <TextField layoutX="148.0" layoutY="276.0" />
+            <Button layoutX="19.0" layoutY="330.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="27.0" prefWidth="87.0" text="Register" />
+            <Button layoutX="257.0" layoutY="329.0" mnemonicParsing="false" onAction="#goToMainScreen" prefHeight="27.0" prefWidth="87.0" text="Back" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

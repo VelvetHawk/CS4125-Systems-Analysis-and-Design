@@ -11,7 +11,7 @@ public class RegisterController
 {
     RegisterModel model;
     RegisterView view;
-    boolean registered;
+    boolean registered = true;
     boolean alreadyRegistered = true;
 
     public RegisterController(RegisterView view) throws Exception

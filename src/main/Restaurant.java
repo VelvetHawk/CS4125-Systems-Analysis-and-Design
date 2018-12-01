@@ -1,5 +1,6 @@
 package main;
 
+import controllers.ScreensController;
 import display.components.CartListPanel;
 import display.views.LoginView;
 import display.views.RegisterView;
@@ -12,12 +13,12 @@ import javafx.stage.Stage;
 
 import static javafx.application.Application.launch;
 
-public class Restaurant extends Application
-{
-    private LoginView loginView;
-	public static void main(String[] args)
-	{
-	    launch(args);
+//public class Restaurant extends Application
+//{
+//    private LoginView loginView;
+//	public static void main(String[] args)
+//	{
+//	    launch(args);
 		//RegisterLogin rl = new RegisterLogin();
 		//ConsumableFactory c = new ConsumableFactory();
         //Consumable f = c.getConsumable("pizza");
@@ -48,12 +49,65 @@ public class Restaurant extends Application
 //		frame.setSize(400, 500);
 //		frame.setLocationRelativeTo(null); // Center
 //		frame.setVisible(true);
-	}
+//	}
+//
+//
+
+
+
+
+//}
+//
+
+
+package modle;
+
+import controller.ScreensController;
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+
+/**
+ *
+ * @author maqayoom
+ */
+public class Restaurant extends Application {
+
+    public static String mainScreenId = "main";
+    public static String mainScreenFile = "/view/mainScreen.fxml";
+    public static String loginScreenId = "login";
+    public static String loginScreenFile = "/view/login.fxml";
+    public static String registrationId = "register";
+    public static String registrationFile = "/view/registration.fxml";
+    public static String mainMenuId = "mainMenu";
+    public static String mainMenuFile = "/view/mainMenu.fxml";
+    public static String staticChoiceId = "staticChoice";
+    public static String staticChoiceIdFile = "/view/staticChoice.fxml";
+
 
     @Override
-    public void start(Stage primaryStage){
-        loginView = new LoginView();
-        Stage stage = new Stage();
-        loginView.start(stage);
+    public void start(Stage primaryStage) {
+
+        ScreensController mainContainer = new ScreensController();
+
+        mainContainer.loadScreen(Restaurant.mainScreenId, mainScreenFile);
+        mainContainer.loadScreen(Restaurant.loginScreenId, loginScreenFile);
+        mainContainer.loadScreen(Restaurant.registrationId, registrationFile);
+        mainContainer.loadScreen(Restaurant.mainMenuId, mainMenuFile);
+        mainContainer.loadScreen(Restaurant.staticChoiceId, staticChoiceIdFile);
+
+        mainContainer.setScreen(Restaurant.mainScreenId); // set the main screen at the start
+        // grouping the scene to root.
+        Group root = new Group();
+        root.getChildren().addAll(mainContainer);
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }

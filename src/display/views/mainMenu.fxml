@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainMenu">
+   <children>
+      <ToolBar layoutY="6.0" prefHeight="42.0" prefWidth="600.0">
+        <items>
+          <Button mnemonicParsing="false" onAction="#goToMainScreen" text="logout" />
+            <Button mnemonicParsing="false" onAction="#goToStaticScreen" text="staticController" />
+        </items>
+      </ToolBar>
+      <Text layoutX="118.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Main menu" wrappingWidth="269.2060546875" />
+   </children>
+</AnchorPane>
