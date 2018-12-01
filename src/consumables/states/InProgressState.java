@@ -1,15 +1,16 @@
 package consumables.states;
 
-public class CancelOrderState implements State
+public class InProgressState implements State
 {
+    @Override
     public void doAction(Orders orders)
     {
-        System.out.println("Order is in cancel state");
+        System.out.println("Order is in progress");
         orders.setState(this);
     }
 
     public String toString()
     {
-        return "Order cancel State";
+        return "Progress State";
     }
 }
