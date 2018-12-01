@@ -73,32 +73,20 @@ import javafx.stage.Stage;
  *
  * @author maqayoom
  */
-public class Restaurant extends Application {
-
-    public static String mainScreenId = "main";
-    public static String mainScreenFile = "/display/views/mainScreen.fxml";
-    public static String loginScreenId = "login";
-    public static String loginScreenFile = "/display/views/login.fxml";
-    public static String registrationId = "register";
-    public static String registrationFile = "/display/views/registration.fxml";
-    public static String mainMenuId = "mainMenu";
-    public static String mainMenuFile = "/display/views/mainMenu.fxml";
-    public static String staticChoiceId = "staticChoice";
-    public static String staticChoiceIdFile = "/display/views/staticChoice.fxml";
-
-
+public class Restaurant extends Application
+{
     @Override
-    public void start(Stage primaryStage) {
-
+    public void start(Stage primaryStage)
+    {
         ScreensController mainContainer = new ScreensController();
 
-        mainContainer.loadScreen(Restaurant.mainScreenId, mainScreenFile);
-        mainContainer.loadScreen(Restaurant.loginScreenId, loginScreenFile);
-        mainContainer.loadScreen(Restaurant.registrationId, registrationFile);
-        mainContainer.loadScreen(Restaurant.mainMenuId, mainMenuFile);
-        mainContainer.loadScreen(Restaurant.staticChoiceId, staticChoiceIdFile);
+        mainContainer.loadScreen("main", "/display/views/mainScreen.fxml");
+        mainContainer.loadScreen("login", "/display/views/login.fxml");
+        mainContainer.loadScreen("register", "/display/views/registration.fxml");
+        mainContainer.loadScreen("mainMenu", "/display/views/mainMenu.fxml");
+        mainContainer.loadScreen("staticChoice", "/display/views/staticChoice.fxml");
 
-        mainContainer.setScreen(Restaurant.mainScreenId); // set the main screen at the start
+        mainContainer.setScreen("main"); // set the main screen at the start
         // grouping the scene to root.
         Group root = new Group();
         root.getChildren().addAll(mainContainer);
@@ -107,7 +95,8 @@ public class Restaurant extends Application {
         primaryStage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         launch(args);
     }
 }
