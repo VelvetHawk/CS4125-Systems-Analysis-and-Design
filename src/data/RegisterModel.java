@@ -1,9 +1,7 @@
-package models;
-
-import data.SQLConnector;
+package data;
 
 import java.sql.Connection;
-import data.DatabaseEnum;
+
 
 
 public class RegisterModel{
@@ -45,6 +43,7 @@ public class RegisterModel{
         values[11] = "default";
         boolean registerSuccess = SQLconn.insert("users", columns, values);
         if (registerSuccess) {
+            System.out.println("Registered successfully");
             registered = true;
         } else {
             registered = false;

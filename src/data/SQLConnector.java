@@ -14,26 +14,72 @@ public class SQLConnector implements DatabaseConnector
     private Statement statement = null;
     private PreparedStatement preparedStatement = null;
     private ResultSet rs = null;
+    private boolean awsSet = false;
+    private String PUBLIC_DNS;
+    private String PORT;
+    private String DATABASE, REMOTE_DATABASE_USERNAME, DATABASE_USER_PASSWORD;
+
 
     @Override
-    public void getConnection() throws Exception
+    public void getConnection(DatabaseEnum val) throws Exception
     {
-        try {
+        try
+        {
             Class.forName("com.mysql.jdbc.Driver");
+            if(val==DatabaseEnum.MYSQL)
+            {
+                mysqlConnect();
+            }
+            //If user has requested to use AWS database
+            else
+            {
+                awsConnect();
+            }
 
             //conn = DriverManager.getConnection(
               //      "jdbc:mysql://localhost/Restaurant_DB?"+ "user=root&password=");
 
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/Restaurant_DB?"+ "user=root&password=");
+            //conn = DriverManager.getConnection("jdbc:mysql://localhost/Restaurant_DB?"+ "user=root&password=");
 
             //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant_DB?", "root", "");
 
             //return conn;
-        } catch(ClassNotFoundException exc) {
+        }
+        catch(ClassNotFoundException exc)
+        {
             System.out.println(exc);
             exc.printStackTrace();
             throw exc;
             //System.out.println("Could not find data");
+        }
+
+
+
+
+    }
+
+    private void awsConnect() throws Exception
+    {
+        try {
+            conn = DriverManager.
+                    getConnection("jdbc:mysql://" + PUBLIC_DNS + ":" + PORT + "/" + DATABASE, REMOTE_DATABASE_USERNAME, DATABASE_USER_PASSWORD);
+        } catch (SQLException e) {
+            System.out.println("Connection Failed!:\n" + e.getMessage());
+        }
+
+        if (conn != null) {
+            System.out.println("SUCCESS!!!! You made it, take control     your database now!");
+        } else {
+            System.out.println("FAILURE! Failed to make connection!");
+        }
+    }
+
+    private void mysqlConnect() throws Exception
+    {
+        try {
+            conn = DriverManager.getConnection(
+                    "jdbc:mysql://localhost/Restaurant_DB?"+ "user=sqluser&password=sqlpw");
+            //return conn;
         } catch(SQLException exc) {
             exc.printStackTrace();
             throw exc;

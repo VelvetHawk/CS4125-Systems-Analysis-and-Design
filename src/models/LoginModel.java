@@ -11,6 +11,7 @@ import java.sql.*;
 import java.sql.Connection;
 
 import data.SQLConnector;
+import data.DatabaseEnum;
 
 /**
  *
@@ -34,7 +35,7 @@ public class LoginModel
             user = "'" + user  + "'";
             pass = "'" + pass + "'";
             SQLConnector SQLconn = new SQLConnector();
-            SQLconn.getConnection();
+            SQLconn.getConnection(DatabaseEnum.MYSQL);
             String [] columns = {"username", "password"};
             ResultSet rs = SQLconn.select("users", columns, " WHERE username =" + user + " AND PASSWORD =" + pass, null );
             if(rs.next()) {

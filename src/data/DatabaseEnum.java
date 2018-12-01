@@ -1,6 +1,6 @@
 package data;
 
-public enum Database
+public enum DatabaseEnum
 {
 	MYSQL,
 	AWS
