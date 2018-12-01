@@ -11,6 +11,6 @@ public class CreatedState implements State
 
     public String toString()
     {
-        return "Progress State";
+        return "Created State";
     }
 }
