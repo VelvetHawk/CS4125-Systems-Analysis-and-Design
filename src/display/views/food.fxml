@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FoodController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="593.0" prefWidth="598.0" style="-fx-background-color: white;">
+         <children>
+            <ToolBar prefHeight="45.0" prefWidth="746.0">
+              <items>
+                <Button mnemonicParsing="false" onAction="#goToMainMenu" text="Back" />
+              </items>
+            </ToolBar>
+            <ImageView fitHeight="84.0" fitWidth="116.0" layoutX="6.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/burger.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="173.0" layoutY="50.0" mnemonicParsing="false" onAction="#getPlanBurger" prefHeight="75.0" prefWidth="120.0" text="Plan Burger" />
+            <Button layoutX="313.0" layoutY="50.0" mnemonicParsing="false" onAction="#getRegularBurger" prefHeight="75.0" prefWidth="120.0" text="Regular Burger" />
+            <Button layoutX="447.0" layoutY="50.0" mnemonicParsing="false" onAction="#getDoubleBurger" prefHeight="75.0" prefWidth="120.0" text="Double Burger" />
+            <ImageView fitHeight="98.0" fitWidth="113.0" layoutX="6.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/kebab.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="80.0" fitWidth="123.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/pizza.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="447.0" layoutY="166.0" mnemonicParsing="false" onAction="#getSeekhKebab" prefHeight="75.0" prefWidth="120.0" text="Seekh kebab" />
+            <Button layoutX="173.0" layoutY="166.0" mnemonicParsing="false" onAction="#getShamKebab" prefHeight="75.0" prefWidth="120.0" text="sham kebab" />
+            <Button layoutX="313.0" layoutY="166.0" mnemonicParsing="false" onAction="#getTavaKebab" prefHeight="75.0" prefWidth="120.0" text="Tava kebab" />
+            <Button layoutX="447.0" layoutY="275.0" mnemonicParsing="false" onAction="#getSmallPizza" prefHeight="75.0" prefWidth="120.0" text="Small" />
+            <Button layoutX="313.0" layoutY="275.0" mnemonicParsing="false" onAction="#getMeduimPizza" prefHeight="75.0" prefWidth="120.0" text="Medium" />
+            <Button layoutX="173.0" layoutY="278.0" mnemonicParsing="false" onAction="#getLargePizza" prefHeight="75.0" prefWidth="120.0" text="Large" />
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

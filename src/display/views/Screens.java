@@ -7,5 +7,6 @@ public enum Screens
 	REGISTRATION,
 	MAIN_MENU,
 	MAKE_ORDER,
-	Select_Drink
+	Select_Drink,
+	Select_Food
 }
