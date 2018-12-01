@@ -19,7 +19,7 @@ public class Beans extends FoodDecorator
     @Override
     public String getName()
     {
-        return parent.getName() + "Beans";
+        return parent.getName() + " Beans";
     }
 
     @Override

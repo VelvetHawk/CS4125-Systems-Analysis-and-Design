@@ -4,6 +4,7 @@ import consumables.decorators.DrinkDecorator;
 import consumables.decorators.FoodDecorator;
 import consumables.decorators.SideDecorator;
 import consumables.decorators.ToppingDecorator;
+import consumables.states.State;
 
 import java.util.ArrayList;
 
@@ -14,11 +15,71 @@ public class Order
 	private ArrayList<ToppingDecorator> toppings;
 	private ArrayList<SideDecorator> sides;
 	private ArrayList<DrinkDecorator> drinks;
-	private Status orderStatus;
+	private State orderState;
 	
 	public double getTotalCost()
 	{
 		// TODO: Implement method
 		return 0;
+	}
+
+	public int getOrderNumber()
+	{
+		return orderNumber;
+	}
+
+	public void setOrderNumber(int orderNumber)
+	{
+		this.orderNumber = orderNumber;
+	}
+
+	public ArrayList<FoodDecorator> getFood()
+	{
+		return food;
+	}
+
+	public void setFood(ArrayList<FoodDecorator> food)
+	{
+		this.food = food;
+	}
+
+	public ArrayList<ToppingDecorator> getToppings()
+	{
+		return toppings;
+	}
+
+	public void setToppings(ArrayList<ToppingDecorator> toppings)
+	{
+		this.toppings = toppings;
+	}
+
+	public ArrayList<SideDecorator> getSides()
+	{
+		return sides;
+	}
+
+	public void setSides(ArrayList<SideDecorator> sides)
+	{
+		this.sides = sides;
+	}
+
+	public ArrayList<DrinkDecorator> getDrinks()
+	{
+		return drinks;
+	}
+
+	public void setDrinks(ArrayList<DrinkDecorator> drinks)
+	{
+		this.drinks = drinks;
+	}
+
+	public State getOrderState()
+	{
+		return orderState;
+	}
+
+	public void setOrderState(State orderState)
+	{
+		this.orderState = orderState;
 	}
 }

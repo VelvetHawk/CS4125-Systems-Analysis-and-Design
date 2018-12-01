@@ -19,7 +19,7 @@ public class Pineapple extends FoodDecorator
     @Override
     public String getName()
     {
-        return parent.getName() + "Pineapple";
+        return parent.getName() + " Pineapple";
     }
 
     @Override

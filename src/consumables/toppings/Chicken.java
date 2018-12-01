@@ -19,7 +19,7 @@ public class Chicken extends FoodDecorator
     @Override
     public String getName()
     {
-        return parent.getName() + "Chicken";
+        return parent.getName() + " Chicken";
     }
 
     @Override

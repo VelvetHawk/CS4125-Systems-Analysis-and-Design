@@ -19,7 +19,7 @@ public class Sprite extends DrinkDecorator
     @Override
     public String getName()
     {
-        return parent.getName() + "Sprite";
+        return parent.getName() + " Sprite";
     }
 
     @Override

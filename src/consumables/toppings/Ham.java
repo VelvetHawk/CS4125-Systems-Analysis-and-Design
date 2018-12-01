@@ -19,7 +19,7 @@ public class Ham extends FoodDecorator
     @Override
     public String getName()
     {
-        return parent.getName() + "Ham";
+        return parent.getName() + " Ham";
     }
 
     @Override

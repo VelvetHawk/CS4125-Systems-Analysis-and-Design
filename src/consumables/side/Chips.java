@@ -19,7 +19,7 @@ public class Chips extends FoodDecorator
     @Override
     public String getName()
     {
-        return parent.getName() + "Chips";
+        return parent.getName() + " Chips";
     }
 
     @Override

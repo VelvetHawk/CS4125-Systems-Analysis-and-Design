@@ -19,7 +19,7 @@ public class Pepperoni extends FoodDecorator
     @Override
     public String getName()
     {
-        return parent.getName() + "Pepperoni";
+        return parent.getName() + " Pepperoni";
     }
 
     @Override
