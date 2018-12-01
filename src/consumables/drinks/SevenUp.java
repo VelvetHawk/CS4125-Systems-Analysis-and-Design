@@ -19,7 +19,7 @@ public class SevenUp extends DrinkDecorator
     @Override
     public String getName()
     {
-        return parent.getName() + "7Up";
+        return parent.getName() + " 7Up";
     }
 
     @Override

@@ -19,7 +19,7 @@ public class Sausage extends FoodDecorator
     @Override
     public String getName()
     {
-        return parent.getName() + "Sausage";
+        return parent.getName() + " Sausage";
     }
 
     @Override

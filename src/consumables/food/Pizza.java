@@ -19,7 +19,7 @@ public class Pizza extends FoodDecorator
     @Override
     public String getName()
     {
-        return parent.getName() + "Pizza";
+        return parent.getName() + " Pizza";
     }
 
     @Override

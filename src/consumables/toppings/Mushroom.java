@@ -19,7 +19,7 @@ public class Mushroom extends FoodDecorator
     @Override
     public String getName()
     {
-        return parent.getName() + "Mushroom";
+        return parent.getName() + " Mushroom";
     }
 
     @Override

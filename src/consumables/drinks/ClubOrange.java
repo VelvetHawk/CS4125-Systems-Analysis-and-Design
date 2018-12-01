@@ -19,7 +19,7 @@ public class ClubOrange extends DrinkDecorator
     @Override
     public String getName()
     {
-        return parent.getName() + "Club Orange";
+        return parent.getName() + " Club Orange";
     }
 
     @Override

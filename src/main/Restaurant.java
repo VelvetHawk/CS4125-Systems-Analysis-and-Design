@@ -49,6 +49,9 @@ public class Restaurant extends Application
 
         System.out.println("Drink cost: " + drinkOrder.getCost());
         System.out.println("Drink: " + drinkOrder.getName());
+
+
+
         ScreensController mainContainer = new ScreensController();
 
         mainContainer.loadScreen(Screens.MAIN, "/display/views/mainScreen.fxml");
