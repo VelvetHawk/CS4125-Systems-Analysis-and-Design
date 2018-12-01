@@ -6,6 +6,7 @@
 //package com.mvc.model;
 package models;
 
+import javafx.scene.control.*;
 import java.sql.*;
 import java.sql.Connection;
 
@@ -28,7 +29,7 @@ public class LoginModel
     public void loginValidation(String user, char [] passChars ) throws Exception
     {
         if(passChars!=null) {
-            String pass=new String(passChars);
+            String pass = new String(passChars);
             //add '' to values to allow them to be added to sql queries
             user = "'" + user  + "'";
             pass = "'" + pass + "'";
@@ -43,11 +44,12 @@ public class LoginModel
                 //not found
                 loginValid = false;
             }
-
-            System.out.println(loginValid);
+            //System.out.println(loginValid);
             rs.close();
             SQLconn.closeConnection();
         }
+        else
+            System.out.println("Invalid password passed");
     }
 }
 

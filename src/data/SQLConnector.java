@@ -26,6 +26,8 @@ public class SQLConnector implements DatabaseConnector
 
             conn = DriverManager.getConnection("jdbc:mysql://localhost/Restaurant_DB?"+ "user=root&password=");
 
+            //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant_DB?", "root", "");
+
             //return conn;
         } catch(ClassNotFoundException exc) {
             System.out.println(exc);
