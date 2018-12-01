@@ -34,7 +34,7 @@
             <Button layoutX="19.0" layoutY="330.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="27.0" prefWidth="87.0" text="Register" />
             <Button layoutX="257.0" layoutY="329.0" mnemonicParsing="false" onAction="#goToMainScreen" prefHeight="27.0" prefWidth="87.0" text="Back" />
             <PasswordField fx:id="password_Field" layoutX="148.0" layoutY="163.0" />
-            <PasswordField layoutX="148.0" layoutY="202.0" />
+            <PasswordField fx:id="password_Field1" layoutX="148.0" layoutY="202.0" />
          </children>
       </AnchorPane>
    </children>

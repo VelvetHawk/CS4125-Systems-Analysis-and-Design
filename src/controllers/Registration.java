@@ -30,7 +30,7 @@ public class Registration implements Initializable , ControlledScreen {
 
 
     @FXML private TextField nameTextField, surnameTextField,usernameTextField, emailTextField,	addressTextField, phoneTextField;
-    @FXML private PasswordField password_Field;
+    @FXML private PasswordField password_Field, password_Field1;
     ScreensController myController;
     /**
      * Initializes the controller class.
@@ -82,9 +82,11 @@ public class Registration implements Initializable , ControlledScreen {
         emailTextField.setText("");
         addressTextField.setText("");
         phoneTextField.setText("");
+        usernameTextField.setText("");
         //pointsTextField.setText("");
         //account_type_IDTextField.setText("");
         password_Field.setText("");
+        password_Field1.setText("");
         System.out.println("you are pressing the clear button");
     }
 
@@ -125,15 +127,18 @@ public class Registration implements Initializable , ControlledScreen {
         if(name.isEmpty() || surname.isEmpty() || email.isEmpty() || address.isEmpty() ||
                 phone.isEmpty() || password.isEmpty() || username.isEmpty() || passwordChar.length ==0)
         {
-            setMessage("Please complete the form before press the button");
+            setMessage("Please complete the form before press the button"); // popup message
 
-        } else {
+        }else if (password_Field != password_Field1){
+            setMessage("Password field not matched");
+        }else{
 
             // account type is setup as default to Customers.
             checkRegistration(name, surname, username, passwordChar, email, address, phone);
+            clearForm();// clear the form once user is registered
 
         }
-        clearForm();
+        //clearForm();
         System.out.println("Create button is pressed");
 
     }
