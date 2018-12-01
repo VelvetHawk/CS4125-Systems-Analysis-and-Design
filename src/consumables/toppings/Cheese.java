@@ -19,12 +19,12 @@ public class Cheese extends FoodDecorator
     @Override
     public String getName()
     {
-        return "Cheese";
+        return parent.getName() + "Cheese";
     }
 
     @Override
     public double getCost()
     {
-        return 1;
+        return parent.getCost() + 1;
     }
 }

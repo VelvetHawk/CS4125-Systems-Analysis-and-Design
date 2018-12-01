@@ -19,12 +19,12 @@ public class Kebab extends FoodDecorator
 	@Override
 	public String getName()
 	{
-		return "Kebab";
+		return parent.getName() + "Kebab";
 	}
 	
 	@Override
 	public double getCost()
 	{
-		return 1;
+		return parent.getCost() + 1;
 	}
 }

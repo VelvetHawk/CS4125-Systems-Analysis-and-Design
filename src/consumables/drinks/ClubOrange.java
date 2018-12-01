@@ -19,12 +19,12 @@ public class ClubOrange extends DrinkDecorator
     @Override
     public String getName()
     {
-        return "Club Orange";
+        return parent.getName() + "Club Orange";
     }
 
     @Override
     public double getCost()
     {
-        return 1;
+        return parent.getCost() + 1;
     }
 }

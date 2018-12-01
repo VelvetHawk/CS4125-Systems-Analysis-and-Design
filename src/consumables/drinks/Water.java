@@ -19,12 +19,12 @@ public class Water extends DrinkDecorator
     @Override
     public String getName()
     {
-        return "Water";
+        return parent.getName() + "Water";
     }
 
     @Override
     public double getCost()
     {
-        return 1;
+        return parent.getCost() + .5;
     }
 }

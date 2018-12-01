@@ -19,12 +19,12 @@ public class PepsiMax extends DrinkDecorator
     @Override
     public String getName()
     {
-        return "Pepsi Max";
+        return parent.getName() + "Pepsi Max";
     }
 
     @Override
     public double getCost()
     {
-        return 1;
+        return parent.getCost() + 1;
     }
 }
