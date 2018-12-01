@@ -37,7 +37,7 @@ public class MainMenu implements Initializable, ControlledScreen {
     }
 
     @FXML
-    private void goToStaticScreen(ActionEvent event){
+    private void goToOrderScreen(ActionEvent event){
         myController.setScreen(Screens.MAKE_ORDER);
     }
 

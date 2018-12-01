@@ -13,7 +13,7 @@
       <ToolBar layoutY="6.0" prefHeight="42.0" prefWidth="600.0">
         <items>
           <Button mnemonicParsing="false" onAction="#goToMainScreen" text="logout" />
-            <Button mnemonicParsing="false" onAction="#goToStaticScreen" text="staticController" />
+            <Button mnemonicParsing="false" onAction="#goToOrderScreen" text="Make an Order" />
         </items>
       </ToolBar>
       <Text layoutX="118.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Main menu" wrappingWidth="269.2060546875" />

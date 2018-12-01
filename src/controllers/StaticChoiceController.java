@@ -4,6 +4,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import display.views.Screens;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import main.Restaurant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,8 +19,13 @@ import javafx.fxml.Initializable;
  * @author maqayoom
  */
 public class StaticChoiceController implements Initializable , ControlledScreen {
-
-    ScreensController myController;
+	
+	@FXML private AnchorPane rootPane;
+	@FXML private Label paneTitle;
+	@FXML private HBox choiceBox;
+	@FXML private Button backButton;
+	
+	ScreensController myController;
     /**
      * Initializes the controller class.
      */
