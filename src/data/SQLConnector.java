@@ -77,8 +77,9 @@ public class SQLConnector implements DatabaseConnector
     private void mysqlConnect() throws Exception
     {
         try {
-            conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/Restaurant_DB?"+ "user=sqluser&password=sqlpw");
+            //conn = DriverManager.getConnection(
+              //      "jdbc:mysql://localhost/Restaurant_DB?"+ "user=sqluser&password=sqlpw");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant_DB?", "root", "");
             //return conn;
         } catch(SQLException exc) {
             exc.printStackTrace();

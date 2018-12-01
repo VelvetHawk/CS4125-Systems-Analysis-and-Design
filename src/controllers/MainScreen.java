@@ -37,6 +37,11 @@ public class MainScreen implements Initializable, ControlledScreen {
     private void goToRegistration(javafx.event.ActionEvent event){
         myController.setScreen(Screens.REGISTRATION);
     }
+// i was creating this just for the test
+//    @FXML
+//    private void goToDrinks(javafx.event.ActionEvent event){
+//        myController.setScreen(Screens.Select_Drink);
+//    }
 
 
 }

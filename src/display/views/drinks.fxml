@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DrinksController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="736.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/clubOrange.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="52.0" fitWidth="36.0" layoutX="3.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/cocacola.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="44.0" layoutX="4.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/dietCo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="39.0" layoutX="2.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/pepsi.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="39.0" layoutX="4.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/pepsiMax.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="39.0" layoutX="4.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/7Up.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="39.0" layoutX="5.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/sprite.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="39.0" layoutX="4.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/water.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>
