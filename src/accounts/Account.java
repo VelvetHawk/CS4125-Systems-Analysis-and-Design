@@ -23,4 +23,6 @@ public abstract class Account
 		this.phone = phone;
 		this.address = address;
 	}
+	
+	// Abstract methods
 }
