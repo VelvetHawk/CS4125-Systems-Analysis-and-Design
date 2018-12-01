@@ -1,15 +1,16 @@
 package consumables.states;
 
-public class PlaceOrderState implements State
+public class DeliveredState implements State
 {
+    @Override
     public void doAction(Orders orders)
     {
-        System.out.println("Order is in Progress state");
+        System.out.println("Order is in delivered state");
         orders.setState(this);
     }
 
     public String toString()
     {
-        return "Progress State";
+        return "Delivered State";
     }
 }
