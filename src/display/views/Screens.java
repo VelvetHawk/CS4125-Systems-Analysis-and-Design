@@ -8,5 +8,6 @@ public enum Screens
 	MAIN_MENU,
 	MAKE_ORDER,
 	Select_Drink,
-	Select_Food
+	Select_Food,
+	Select_Topping
 }

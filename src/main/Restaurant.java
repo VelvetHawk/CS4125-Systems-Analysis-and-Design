@@ -61,6 +61,7 @@ public class Restaurant extends Application
         mainContainer.loadScreen(Screens.MAKE_ORDER, "/display/views/staticChoice.fxml");
         mainContainer.loadScreen(Screens.Select_Drink, "/display/views/drinks.fxml");
         mainContainer.loadScreen(Screens.Select_Food, "/display/views/food.fxml");
+        mainContainer.loadScreen(Screens.Select_Topping, "/display/views/toppings.fxml");
         // change the following back to main
         mainContainer.setScreen(Screens.MAIN); // set the main screen at the start
         // grouping the scene to root.

@@ -62,14 +62,18 @@ public class FoodController implements Initializable, ControlledScreen {
     }
     @FXML
     private void getLargePizza(ActionEvent event){
+        myController.setScreen(Screens.Select_Topping);
+
         System.out.println("Large Pizza  is clicked");
     }
     @FXML
     private void getMeduimPizza(ActionEvent event){
+        myController.setScreen(Screens.Select_Topping);
         System.out.println("Medium Pizza  is clicked");
     }
     @FXML
     private void getSmallPizza(ActionEvent event){
+        myController.setScreen(Screens.Select_Topping);
         System.out.println(" Small Pizza  is clicked");
     }
 
