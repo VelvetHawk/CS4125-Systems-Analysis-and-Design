@@ -19,12 +19,12 @@ public class Pepperoni extends FoodDecorator
     @Override
     public String getName()
     {
-        return "Pepperoni";
+        return parent.getName() + "Pepperoni";
     }
 
     @Override
     public double getCost()
     {
-        return 1;
+        return parent.getCost() + 1;
     }
 }

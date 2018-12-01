@@ -19,12 +19,12 @@ public class Beans extends FoodDecorator
     @Override
     public String getName()
     {
-        return "Beans";
+        return parent.getName() + "Beans";
     }
 
     @Override
     public double getCost()
     {
-        return 1;
+        return parent.getCost() + 1;
     }
 }

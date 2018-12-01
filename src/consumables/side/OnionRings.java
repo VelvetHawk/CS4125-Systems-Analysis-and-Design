@@ -19,12 +19,12 @@ public class OnionRings extends FoodDecorator
     @Override
     public String getName()
     {
-        return "Onion Rings";
+        return parent.getName() + "Onion Rings";
     }
 
     @Override
     public double getCost()
     {
-        return 1;
+        return parent.getCost() + 1;
     }
 }

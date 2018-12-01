@@ -19,12 +19,12 @@ public class SevenUp extends DrinkDecorator
     @Override
     public String getName()
     {
-        return "7Up";
+        return parent.getName() + "7Up";
     }
 
     @Override
     public double getCost()
     {
-        return 1;
+        return parent.getCost() + 1;
     }
 }

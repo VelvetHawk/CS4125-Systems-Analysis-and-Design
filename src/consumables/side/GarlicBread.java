@@ -19,12 +19,12 @@ public class GarlicBread extends FoodDecorator
     @Override
     public String getName()
     {
-        return "Garlic bread";
+        return parent.getName() + "Garlic bread";
     }
 
     @Override
     public double getCost()
     {
-        return 1;
+        return parent.getCost() + 1;
     }
 }

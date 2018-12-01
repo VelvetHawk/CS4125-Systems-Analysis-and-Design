@@ -19,12 +19,12 @@ public class Beef extends FoodDecorator
     @Override
     public String getName()
     {
-        return "Beef";
+        return parent.getName() + "Beef";
     }
 
     @Override
     public double getCost()
     {
-        return 1;
+        return parent.getCost() + 1;
     }
 }

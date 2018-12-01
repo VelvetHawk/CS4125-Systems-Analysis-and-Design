@@ -19,12 +19,12 @@ public class Pineapple extends FoodDecorator
     @Override
     public String getName()
     {
-        return "Pineapple";
+        return parent.getName() + "Pineapple";
     }
 
     @Override
     public double getCost()
     {
-        return 1;
+        return parent.getCost() + 1;
     }
 }

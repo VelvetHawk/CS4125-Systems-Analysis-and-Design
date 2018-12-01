@@ -19,12 +19,12 @@ public class Coleslaw extends FoodDecorator
     @Override
     public String getName()
     {
-        return "Coleslaw";
+        return parent.getName() + "Coleslaw";
     }
 
     @Override
     public double getCost()
     {
-        return 1;
+        return parent.getCost() + 1;
     }
 }

@@ -19,12 +19,12 @@ public class DietCocaCola extends DrinkDecorator
     @Override
     public String getName()
     {
-        return "Diet Coca Cola";
+        return parent.getName() + "Diet Coca Cola";
     }
 
     @Override
     public double getCost()
     {
-        return 1;
+        return parent.getCost() + 1;
     }
 }
