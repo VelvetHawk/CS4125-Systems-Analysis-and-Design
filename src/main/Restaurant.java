@@ -8,6 +8,7 @@ import display.views.RegisterView;
 import javax.swing.*;
 import consumables.decorators.Consumable;
 import consumables.decorators.ConsumableFactory;
+import display.views.Screens;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -80,13 +81,13 @@ public class Restaurant extends Application
     {
         ScreensController mainContainer = new ScreensController();
 
-        mainContainer.loadScreen("main", "/display/views/mainScreen.fxml");
-        mainContainer.loadScreen("login", "/display/views/login.fxml");
-        mainContainer.loadScreen("register", "/display/views/registration.fxml");
-        mainContainer.loadScreen("mainMenu", "/display/views/mainMenu.fxml");
-        mainContainer.loadScreen("staticChoice", "/display/views/staticChoice.fxml");
+        mainContainer.loadScreen(Screens.MAIN, "/display/views/mainScreen.fxml");
+        mainContainer.loadScreen(Screens.LOGIN, "/display/views/login.fxml");
+        mainContainer.loadScreen(Screens.REGISTRATION, "/display/views/registration.fxml");
+        mainContainer.loadScreen(Screens.MAIN_MENU, "/display/views/mainMenu.fxml");
+        mainContainer.loadScreen(Screens.MAKE_ORDER, "/display/views/staticChoice.fxml");
 
-        mainContainer.setScreen("main"); // set the main screen at the start
+        mainContainer.setScreen(Screens.MAIN); // set the main screen at the start
         // grouping the scene to root.
         Group root = new Group();
         root.getChildren().addAll(mainContainer);

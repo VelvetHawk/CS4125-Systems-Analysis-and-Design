@@ -3,6 +3,7 @@ package controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import display.views.Screens;
 import main.Restaurant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,12 +33,12 @@ public class MainMenu implements Initializable, ControlledScreen {
 
     @FXML
     private void goToMainScreen(ActionEvent event){
-        myController.setScreen(Restaurant.mainScreenId);
+        myController.setScreen(Screens.MAIN);
     }
 
     @FXML
     private void goToStaticScreen(ActionEvent event){
-        myController.setScreen(Restaurant.staticChoiceId);
+        myController.setScreen(Screens.MAKE_ORDER);
     }
 
 }
