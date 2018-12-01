@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="533.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Registration">
+<AnchorPane prefHeight="533.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Registration">
    <children>
       <ImageView fitHeight="646.0" fitWidth="952.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" scaleY="1.25">
          <image>
-            <Image url="@../img/register.jpg" />
+            <Image url="/resources/register.jpg" />
          </image>
       </ImageView>
       <AnchorPane layoutX="215.0" layoutY="14.0" opacity="0.66" prefHeight="360.0" prefWidth="371.0" style="-fx-background-color: grey;">

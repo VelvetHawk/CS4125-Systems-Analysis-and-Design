@@ -1,6 +1,6 @@
 package controllers;
 
-import modle.ScreensFramework;
+import main.Restaurant;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -28,13 +28,13 @@ public class MainScreen implements Initializable, ControlledScreen {
 
     @FXML
     private void goToLogin(javafx.event.ActionEvent event){
-        myController.setScreen(ScreensFramework.loginScreenId);
+        myController.setScreen(Restaurant.loginScreenId);
     }
 
 
     @FXML
     private void goToRegistration(javafx.event.ActionEvent event){
-        myController.setScreen(ScreensFramework.registrationId);
+        myController.setScreen(Restaurant.registrationId);
     }
 
 

@@ -3,7 +3,7 @@ package controllers;
 import java.util.HashMap;
 
 
-import controller.ControlledScreen;
+import controllers.ControlledScreen;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;

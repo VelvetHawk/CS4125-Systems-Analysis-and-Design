@@ -60,9 +60,9 @@ import static javafx.application.Application.launch;
 //
 
 
-package modle;
 
-import controller.ScreensController;
+
+import controllers.ScreensController;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -76,15 +76,15 @@ import javafx.stage.Stage;
 public class Restaurant extends Application {
 
     public static String mainScreenId = "main";
-    public static String mainScreenFile = "/view/mainScreen.fxml";
+    public static String mainScreenFile = "/display/views/mainScreen.fxml";
     public static String loginScreenId = "login";
-    public static String loginScreenFile = "/view/login.fxml";
+    public static String loginScreenFile = "/display/views/login.fxml";
     public static String registrationId = "register";
-    public static String registrationFile = "/view/registration.fxml";
+    public static String registrationFile = "/display/views/registration.fxml";
     public static String mainMenuId = "mainMenu";
-    public static String mainMenuFile = "/view/mainMenu.fxml";
+    public static String mainMenuFile = "/display/views/mainMenu.fxml";
     public static String staticChoiceId = "staticChoice";
-    public static String staticChoiceIdFile = "/view/staticChoice.fxml";
+    public static String staticChoiceIdFile = "/display/views/staticChoice.fxml";
 
 
     @Override

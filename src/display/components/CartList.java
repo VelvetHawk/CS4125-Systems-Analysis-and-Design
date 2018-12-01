@@ -90,7 +90,7 @@ public class CartList extends VBox
 		for ( ; i < items.length; i++)
 			row[i] = new Label(items[i] + (char)(int)(Math.random() * 100 + 60));
 		row[i] = new Label(currencySymbol + " " + String.format("%.2f", itemCost));
-		int lastRowIndex = itemPanel.getRowCount()-1;
+		//int lastRowIndex = itemPanel.getRowCount()-1;
 		Button removeItemButton = new Button("-");
 		removeItemButton.setOnAction(actionEvent ->
 		{
@@ -104,7 +104,7 @@ public class CartList extends VBox
 				}
 		});
 		row[++i] = removeItemButton;
-		itemPanel.addRow(itemPanel.getRowCount()+1, row);
+		//itemPanel.addRow(itemPanel.getRowCount()+1, row);
 		// Set total text
 		totalLabel.setText(currencySymbol + String.format("%.2f", totalAmount));
 		

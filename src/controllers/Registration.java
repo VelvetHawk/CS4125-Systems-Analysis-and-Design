@@ -3,7 +3,7 @@ package controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import modle.ScreensFramework;
+import main.Restaurant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -30,10 +30,10 @@ public class Registration implements Initializable , ControlledScreen {
 
     @FXML
     private void goToLogin(ActionEvent event){
-        myController.setScreen(ScreensFramework.loginScreenId);
+        myController.setScreen(Restaurant.loginScreenId);
     }
     @FXML
     private void goToMainScreen(ActionEvent event){
-        myController.setScreen(ScreensFramework.mainScreenId);
+        myController.setScreen(Restaurant.mainScreenId);
     }
 }

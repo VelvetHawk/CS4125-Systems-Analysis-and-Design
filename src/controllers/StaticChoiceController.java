@@ -3,7 +3,7 @@ package controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import modle.ScreensFramework;
+import main.Restaurant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -38,6 +38,6 @@ public class StaticChoiceController implements Initializable , ControlledScreen 
 
     @FXML
     private void goBackToToMainMenu(javafx.event.ActionEvent event){ // only if the user is successfully logged in then, it'll take the user to the main menu
-        myController.setScreen(ScreensFramework.mainMenuId);
+        myController.setScreen(Restaurant.mainMenuId);
     }
 }
