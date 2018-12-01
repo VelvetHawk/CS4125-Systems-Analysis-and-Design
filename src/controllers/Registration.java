@@ -60,7 +60,7 @@ public class Registration implements Initializable , ControlledScreen {
                 registered = model.getRegistered();
                 if (registered) {
                     setMessage("Successfuly registered");
-                    LoginView login = new LoginView();
+                    myController.setScreen(Screens.LOGIN);  // when the user is successfully registered, the login page will be loaded
 
                 } else {
                     setMessage("Error registering");
