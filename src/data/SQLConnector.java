@@ -15,9 +15,11 @@ public class SQLConnector implements DatabaseConnector
     private PreparedStatement preparedStatement = null;
     private ResultSet rs = null;
     private boolean awsSet = false;
-    private String PUBLIC_DNS;
-    private String PORT;
-    private String DATABASE, REMOTE_DATABASE_USERNAME, DATABASE_USER_PASSWORD;
+    private String PUBLIC_DNS = "cs4125-db-instance.c1qi1r4muekc.us-east-2.rds.amazonaws.com";
+    private String PORT = "3306";
+    private String DATABASE = "Restaurant_db";
+    private String REMOTE_DATABASE_USERNAME = "remoteuser";
+    private String DATABASE_USER_PASSWORD = "remotepassword";
 
 
     @Override

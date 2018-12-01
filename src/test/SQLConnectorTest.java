@@ -79,9 +79,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.sql.Connection;
 import java.sql.*;
 */
-/*
+
 import data.SQLConnector;
 import org.junit.jupiter.api.Test;
+import data.DatabaseEnum;
 
 import java.sql.ResultSet;
 
@@ -98,11 +99,21 @@ public class SQLConnectorTest {
 
     }
 
+    @Test
+    public void testConnection(){
+        try {
+            sqlconnect.getConnection(DatabaseEnum.AWS);
+        }
+        catch(Exception e){
+
+        }
+    }
+
 
     @Test
     public void testUpdate(){
         try {
-            sqlconnect.getConnection();
+            sqlconnect.getConnection(DatabaseEnum.AWS);
         }
         catch(Exception e){
 
@@ -120,7 +131,7 @@ public class SQLConnectorTest {
 
         String [] columns = {"username", "password"};
         try {
-            sqlconnect.getConnection();
+            sqlconnect.getConnection(DatabaseEnum.AWS);
         }
         catch(Exception e){
 
@@ -133,7 +144,7 @@ public class SQLConnectorTest {
         String [] columns = {"username", "password"};
         String [] values = {"default", "'jim'", "'bloggs'", "'testuser'", "'pass'", "'@gmail'", "'ennis'", "'087'", "default", "default", "default", "default"};
         try {
-            sqlconnect.getConnection();
+            sqlconnect.getConnection(DatabaseEnum.AWS);
         }
         catch(Exception e){
 
@@ -152,5 +163,5 @@ public class SQLConnectorTest {
 
 
 
-*/
+
 
