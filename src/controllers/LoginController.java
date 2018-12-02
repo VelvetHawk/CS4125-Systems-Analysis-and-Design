@@ -10,7 +10,7 @@
 
 package controllers;
 
-import models.LoginModel;
+import data.models.LoginModel;
 import display.views.LoginView;
 
 /**

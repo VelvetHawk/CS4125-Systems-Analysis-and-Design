@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 //package com.mvc.model;
-package models;
+package data.models;
 
-import javafx.scene.control.*;
 import java.sql.*;
 import java.sql.Connection;
 

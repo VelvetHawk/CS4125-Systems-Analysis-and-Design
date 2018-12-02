@@ -1,4 +1,4 @@
-package accounts;
+package data.accounts;
 
 public class CustomerAccount extends Account
 {

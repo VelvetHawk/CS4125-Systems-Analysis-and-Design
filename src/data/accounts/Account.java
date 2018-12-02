@@ -1,4 +1,4 @@
-package accounts;
+package data.accounts;
 
 public abstract class Account
 {
