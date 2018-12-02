@@ -107,9 +107,25 @@ public class ScreensController  extends StackPane {
     
     public void getPopUpScreen(PopUpScreens screen, int width, int height)
     {
-	    Stage popUp = new Stage();
-	    popUp.setOnCloseRequest(event ->popUp.close());
-	    popUp.setScene(new Scene((Parent)popUpScreens.get(screen), width, height));
+	    /*
+	    * TODO: This needs to be changed to keep track of the pop-ups made
+	    * When a new pop-up window is requested, it should be of a new type
+	    * Will operate like a stack, with each pop-up being removed as its
+	    * close button is clicked
+	    *
+	    * Currently a NullPointerException is triggered upon closing this event,
+	    * as somewhere there is a dangling reference where the root of a scene
+	    * is a popup, so re-opening fails
+	    * */
+    	Stage popUp = new Stage();
+    	Scene scene = new Scene((Parent)popUpScreens.get(screen), width, height);
+	    popUp.setScene(scene);
+	    popUp.setOnCloseRequest(event ->
+	    {
+		    Stage source = (Stage)event.getSource();
+			source.getScene().setRoot(null);
+		    popUp.close();
+	    });
 	    popUp.initModality(Modality.APPLICATION_MODAL);
 	    popUp.show();
     }

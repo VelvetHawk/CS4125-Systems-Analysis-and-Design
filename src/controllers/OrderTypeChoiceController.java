@@ -75,6 +75,8 @@ public class OrderTypeChoiceController implements Initializable , ControlledScre
     {
         //backButton.setText("Clicked!");
         // TODO: Close dialogue box
-	    myController.getPopUpScreen(PopUpScreens.SELECT_TOPPING, 600, 600);
+	    ((Stage)rootPane.getParent().getScene().getWindow()).close();
+	    myController.getChildren().remove(0);
+	    myController.setScreen(Screens.MAIN_MENU);
     }
 }
