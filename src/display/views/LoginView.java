@@ -31,19 +31,18 @@ public class LoginView extends Application
 {
     private RegisterView registration;
     private MenusView menusView;
-    private Button loginbtn, registrationbtn, clearbtn;
-    private HBox hbBtn, hbtn1;
+    private Button loginbtn;
+    private Button registrationbtn;
+    private Button clearbtn;
+    private HBox hbBtn;
+    private HBox hbtn1;
     private TextField userTextField;
-    private Label userName, password_label;
+    private Label userName;
+    private Label password_label;
     private PasswordField password_field;
     private GridPane grid;
     private Scene scene;
     private Text scenetitle;
-    /*
-    public static void main(String[] args) {
-        launch(args);
-    }
-    */
 
     @Override
     public void start(Stage primaryStage)
@@ -110,25 +109,24 @@ public class LoginView extends Application
             String password = password_field.getText();
             char [] password1 = password.toCharArray();
             //char [] password =password_field.getText();
-            if(user.isEmpty() || password1.length == 0){
+            if (user.isEmpty() || password1.length == 0) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Information Dialog");
                 alert.setHeaderText("Login Filed");
                 alert.setContentText("Please enter your username and password");
-
                 alert.showAndWait();
-            }else{
+            } else {
                 // check in the login controller if the user and password are correct.
 
                 controller.checkCredentials(user, password1);
-                if(controller.getLoginValid() == true){
+                if (controller.getLoginValid() == true) {
                     primaryStage.close();
                     displayMenu();
                 }
-
             }
             //System.out.println("Name "+userTextField.getText()+"\n"+"Password "+password_field.getText());
         });
+
         // clear button action
         registrationbtn.setOnAction(actiontEvent -> {
             actiontarget.setFill(Color.FIREBRICK);
@@ -137,6 +135,7 @@ public class LoginView extends Application
             primaryStage.close();
 
         });
+
         // clear button action
         clearbtn.setOnAction(actiontEvent -> {
             actiontarget.setFill(Color.FIREBRICK);
@@ -175,7 +174,8 @@ public class LoginView extends Application
         //add(msg);
     }
 
-    public void displayMenu(){
+    public void displayMenu()
+    {
         menusView = new MenusView();
         menusView.startMenu();
     }

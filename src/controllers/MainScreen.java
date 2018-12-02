@@ -13,35 +13,38 @@ import java.util.ResourceBundle;
  *
  * @author maqayoom
  */
-public class MainScreen implements Initializable, ControlledScreen {
-
+public class MainScreen implements Initializable, ControlledScreen
+{
     ScreensController myController;
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb)
+    {
         // TODO
     }
 
-    public void setScreenParent(ScreensController screenParent){ myController = screenParent; }
-
+    public void setScreenParent(ScreensController screenParent)
+    {
+        myController = screenParent;
+    }
 
     @FXML
-    private void goToLogin(javafx.event.ActionEvent event){
+    private void goToLogin(javafx.event.ActionEvent event)
+    {
         myController.setScreen(Screens.LOGIN);
     }
 
-
     @FXML
-    private void goToRegistration(javafx.event.ActionEvent event){
+    private void goToRegistration(javafx.event.ActionEvent event)
+    {
         myController.setScreen(Screens.REGISTRATION);
     }
+
 // i was creating this just for the test
 //    @FXML
 //    private void goToDrinks(javafx.event.ActionEvent event){
 //        myController.setScreen(Screens.Select_Drink);
 //    }
-
-
 }

@@ -25,13 +25,15 @@ import javax.swing.text.DefaultTextUI;
  *
  * @author maqayoom
  */
-public class ScreensController  extends StackPane {
+public class ScreensController  extends StackPane
+{
     //Holds the screens to be displayed
 
     private HashMap<Screens, Node> screens = new HashMap<>();
 	private HashMap<PopUpScreens, Node> popUpScreens = new HashMap<>();
     
-    public ScreensController() {
+    public ScreensController()
+	{
         super();
     }
 
@@ -55,7 +57,8 @@ public class ScreensController  extends StackPane {
 
     //Loads the fxml file, add the screen to the screens collection and
     //finally injects the screenPane to the controller.
-    public boolean loadScreen(Object name, String resource) {
+    public boolean loadScreen(Object name, String resource)
+	{
         try {
             FXMLLoader myLoader = new FXMLLoader(getClass().getResource(resource));
             Parent loadScreen = (Parent) myLoader.load();
@@ -73,7 +76,8 @@ public class ScreensController  extends StackPane {
     //First it makes sure the screen has been already loaded.  Then if there is more than
     //one screen the new screen is been added second, and then the current screen is removed.
     // If there isn't any screen being displayed, the new screen is just added to the root.
-    public boolean setScreen(final Screens screen) {
+    public boolean setScreen(final Screens screen)
+	{
 	    if (screens.get(screen) != null) {   //screen loaded
 		    final DoubleProperty opacity = opacityProperty();
 		

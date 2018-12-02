@@ -57,6 +57,7 @@ public class LoginPage extends JFrame
                 Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+
         public void loginValidation() throws Exception
         {
             String user = nameText.getText();

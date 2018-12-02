@@ -107,6 +107,5 @@ public class CartList extends VBox
 		//itemPanel.addRow(itemPanel.getRowCount()+1, row);
 		// Set total text
 		totalLabel.setText(currencySymbol + String.format("%.2f", totalAmount));
-		
 	}
 }

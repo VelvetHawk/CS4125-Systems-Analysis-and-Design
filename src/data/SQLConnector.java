@@ -25,16 +25,13 @@ public class SQLConnector implements DatabaseConnector
     @Override
     public void getConnection(DatabaseEnum val) throws Exception
     {
-        try
-        {
+        try {
             Class.forName("com.mysql.jdbc.Driver");
-            if(val==DatabaseEnum.MYSQL)
-            {
+            if(val==DatabaseEnum.MYSQL) {
                 mysqlConnect();
             }
             //If user has requested to use AWS database
-            else
-            {
+            else {
                 awsConnect();
             }
 
@@ -46,18 +43,12 @@ public class SQLConnector implements DatabaseConnector
             //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Restaurant_DB?", "root", "");
 
             //return conn;
-        }
-        catch(ClassNotFoundException exc)
-        {
+        } catch(ClassNotFoundException exc) {
             System.out.println(exc);
             exc.printStackTrace();
             throw exc;
             //System.out.println("Could not find data");
         }
-
-
-
-
     }
 
     private void awsConnect() throws Exception
@@ -86,8 +77,6 @@ public class SQLConnector implements DatabaseConnector
         } catch(SQLException exc) {
             exc.printStackTrace();
             throw exc;
-        } finally {
-
         }
     }
 

@@ -50,6 +50,7 @@ public class CartListPanel extends JPanel
 		setLayout(new GridBagLayout());
 		constraints = new GridBagConstraints();
 		constraints.fill = GridBagConstraints.HORIZONTAL;
+
 		// Defaults
 		constraints.weighty = 1;
 		constraints.weightx = 1;

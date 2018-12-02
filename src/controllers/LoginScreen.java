@@ -22,8 +22,8 @@ import java.util.ResourceBundle;
  *
  * @author maqayoom
  */
-public class LoginScreen implements Initializable, ControlledScreen {
-
+public class LoginScreen implements Initializable, ControlledScreen
+{
     private LoginModel model;
     boolean loginValid = false;
     // the field are fxml input from the user
@@ -35,13 +35,16 @@ public class LoginScreen implements Initializable, ControlledScreen {
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb)
+    {
         // TODO
         model = new LoginModel();
     }
 
-    public void setScreenParent( ScreensController screenParent){ myController = screenParent; }
-
+    public void setScreenParent( ScreensController screenParent)
+    {
+        myController = screenParent;
+    }
 
     public void checkCredentials(String username, char[] password)
     {
@@ -57,9 +60,12 @@ public class LoginScreen implements Initializable, ControlledScreen {
             //ex.printStackTrace();
         }
     }
-    public boolean getLoginValid(){
+
+    public boolean getLoginValid()
+    {
         return this.loginValid;
     }
+
     public void setMessage(String message)      // get the dialog box for any errors in the validations
     {
         System.out.println(message);
@@ -71,6 +77,7 @@ public class LoginScreen implements Initializable, ControlledScreen {
         //msg = new JLabel(message);
         //add(msg);
     }
+
     // clear text fields
     public void clear_loging_textFields()
     {
@@ -79,12 +86,14 @@ public class LoginScreen implements Initializable, ControlledScreen {
     }
 
     @FXML
-    private void goToMainScreen(javafx.event.ActionEvent event){ // only if the user press back this will return the user to the main screen
+    private void goToMainScreen(javafx.event.ActionEvent event)
+    { // only if the user press back this will return the user to the main screen
         myController.setScreen(Screens.MAIN);
     }
 
     @FXML
-    private void goToMainMenu(javafx.event.ActionEvent event){ // only if the user is successfully logged in then, it'll take the user to the main menu
+    private void goToMainMenu(javafx.event.ActionEvent event)
+    { // only if the user is successfully logged in then, it'll take the user to the main menu
         String user = username.getText();
         String userpassword = password.getText();
         char [] password1 = userpassword.toCharArray();
@@ -99,5 +108,4 @@ public class LoginScreen implements Initializable, ControlledScreen {
             }
         }
     }
-
 }

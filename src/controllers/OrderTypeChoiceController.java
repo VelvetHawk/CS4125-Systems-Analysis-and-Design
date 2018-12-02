@@ -23,8 +23,8 @@ import javafx.fxml.Initializable;
  *
  * @author maqayoom
  */
-public class OrderTypeChoiceController implements Initializable , ControlledScreen {
-	
+public class OrderTypeChoiceController implements Initializable , ControlledScreen
+{
 	@FXML private AnchorPane rootPane;
 	@FXML private Label paneTitle;
 	@FXML private VBox foodChoice;
@@ -37,11 +37,13 @@ public class OrderTypeChoiceController implements Initializable , ControlledScre
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb)
+	{
 	    // Default
     }
     
-    public void setScreenParent(ScreensController screenParent){
+    public void setScreenParent(ScreensController screenParent)
+	{
         myController = screenParent;
     }
 	

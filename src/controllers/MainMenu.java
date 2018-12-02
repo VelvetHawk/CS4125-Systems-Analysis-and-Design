@@ -15,36 +15,38 @@ import javafx.fxml.Initializable;
  *
  * @author maqayoom
  */
-public class MainMenu implements Initializable, ControlledScreen {
-
+public class MainMenu implements Initializable, ControlledScreen
+{
     ScreensController myController;
-
 
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb)
+    {
         // TODO
     }
 
-    public void setScreenParent(ScreensController screenParent){
+    public void setScreenParent(ScreensController screenParent)
+    {
         myController = screenParent;
     }
 
-
     @FXML
-    private void goToMainScreen(ActionEvent event){
+    private void goToMainScreen(ActionEvent event)
+    {
         myController.setScreen(Screens.MAIN);
     }
 
     @FXML
-    private void goToOrderScreen(ActionEvent event){
+    private void goToOrderScreen(ActionEvent event)
+    {
         myController.setScreen(Screens.MAKE_ORDER);
     }
     @FXML
-    private void goToDrinksPopUp(ActionEvent event){
+    private void goToDrinksPopUp(ActionEvent event)
+    {
         myController.getPopUpScreen(PopUpScreens.SELECT_DRINK, 600, 600);
     }
-
 }

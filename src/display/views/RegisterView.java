@@ -16,13 +16,34 @@ import javafx.stage.Stage;
 public class RegisterView
 {
     private RegisterController controller;
-
     private LoginView login;
-    private Button back, registrationbtn, clear_form_btn;
-    private HBox hbBtn, hbtn1;
-    private TextField nameTextField, surnameTextField,usernameTextField, password_TextField, emailTextField,	addressTextField, phoneTextField,	pointsTextField
-            ,	account_type_IDTextField,	date_createdTextField, last_loginTextField;
-    private Label name, surname, username, password_label, email,	address, phone,	points,	account_type_ID,	date_created, last_login;
+    private Button back;
+    private Button registrationbtn;
+    private Button clear_form_btn;
+    private HBox hbBtn;
+    private HBox hbtn1;
+    private TextField nameTextField;
+    private TextField surnameTextField;
+    private TextField usernameTextField;
+    private TextField password_TextField;
+    private TextField emailTextField;
+    private TextField addressTextField;
+    private TextField phoneTextField;
+    private TextField pointsTextField;
+    private TextField account_type_IDTextField;
+    private TextField date_createdTextField;
+    private TextField last_loginTextField;
+    private Label name;
+    private Label surname;
+    private Label username;
+    private Label password_label;
+    private Label email;
+    private Label address;
+    private Label phone;
+    private Label points;
+    private Label account_type_ID;
+    private Label date_created;
+    private Label last_login;
     private PasswordField password_field;
     private GridPane grid;
     private Scene scene;
@@ -35,7 +56,6 @@ public class RegisterView
 
     public void createUser()
     {
-        // set the title to Registration
         Stage reg_stage = new Stage();
         reg_stage.setTitle("Create User ");
         grid = new GridPane();
@@ -172,15 +192,8 @@ public class RegisterView
             phone = phoneTextField.getText();
             //points = pointsTextField.getText();
             password = password_TextField.getText();
-
-
-
-
             String username = usernameTextField.getText();
             char[] passwordChar = password.toCharArray();
-
-
-
 
             if(name.isEmpty() || surname.isEmpty() || email.isEmpty() || address.isEmpty() ||
                     phone.isEmpty() || password.isEmpty() || username.isEmpty() || passwordChar.length ==0)
@@ -189,9 +202,7 @@ public class RegisterView
                 alert.setTitle("Information Dialog");
                 alert.setHeaderText("Creating New user");
                 alert.setContentText("Please complete the form before press the button");
-
                 alert.showAndWait();
-
             } else {
                 controller = null;
                 try {
@@ -210,6 +221,7 @@ public class RegisterView
             actiontarget.setText("Register button pressed");
             System.out.println("Create button is pressed");
         });
+
         // create/register button action
         clear_form_btn.setOnAction(actionEvent -> {
             actiontarget.setFill(Color.FIREBRICK);

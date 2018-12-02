@@ -94,6 +94,5 @@ public class StaticChoicePane extends VBox
 			horizontalBox,
 			navigationBox
 		);
-
 	}
 }
