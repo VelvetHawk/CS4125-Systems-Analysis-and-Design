@@ -21,12 +21,17 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
         </content>
       </ScrollPane>
-      <Button fx:id="addItemButton" layoutX="187.0" layoutY="324.0" mnemonicParsing="false" onAction="#addItemButtonClicked" prefHeight="31.0" prefWidth="260.0" style="-fx-background-color: grey;" text="+">
+      <Button fx:id="addItemButton" layoutX="49.0" layoutY="323.0" mnemonicParsing="false" onAction="#addItemButtonClicked" prefHeight="31.0" prefWidth="260.0" style="-fx-background-color: grey;" text="+">
          <font>
             <Font size="17.0" />
          </font></Button>
       <Label layoutX="14.0" layoutY="355.0" prefHeight="31.0" prefWidth="51.0" text="Total: €" />
       <Label fx:id="totalAmountLabel" layoutX="68.0" layoutY="357.0" prefHeight="27.0" prefWidth="89.0" text="127.07" />
+      <Button fx:id="addItemButton1" layoutX="312.0" layoutY="323.0" mnemonicParsing="false" onAction="#getOrderCompleted" prefHeight="31.0" prefWidth="260.0" style="-fx-background-color: grey;" text="Order Complete">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
 
 
    </children>
