@@ -3,6 +3,7 @@ package controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import display.views.PopUpScreens;
 import display.views.Screens;
 import main.Restaurant;
 import javafx.event.ActionEvent;
@@ -17,15 +18,16 @@ import javafx.fxml.Initializable;
 public class MainMenu implements Initializable, ControlledScreen {
 
     ScreensController myController;
-    
+
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
     public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
     }
@@ -39,6 +41,10 @@ public class MainMenu implements Initializable, ControlledScreen {
     @FXML
     private void goToOrderScreen(ActionEvent event){
         myController.setScreen(Screens.MAKE_ORDER);
+    }
+    @FXML
+    private void goToDrinksPopUp(ActionEvent event){
+        myController.getPopUpScreen(PopUpScreens.SELECT_DRINK, 600, 600);
     }
 
 }

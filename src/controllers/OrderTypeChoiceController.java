@@ -31,7 +31,7 @@ public class OrderTypeChoiceController implements Initializable , ControlledScre
 	@FXML private VBox sideChoice;
 	@FXML private VBox drinkChoice;
 	@FXML private Button backButton;
-	
+
 	ScreensController myController;
     /**
      * Initializes the controller class.
@@ -77,6 +77,6 @@ public class OrderTypeChoiceController implements Initializable , ControlledScre
         // TODO: Close dialogue box
 	    ((Stage)rootPane.getParent().getScene().getWindow()).close();
 	    myController.getChildren().remove(0);
-	    myController.setScreen(Screens.MAIN_MENU);
+	    myController.setScreen(Screens.MAKE_ORDER);
     }
 }
