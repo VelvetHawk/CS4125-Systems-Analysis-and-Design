@@ -30,12 +30,22 @@ public class LoginScreen implements Initializable, ControlledScreen
     ScreensController myController;
     /**
      * Initializes the controller class.
+     * This method is called when the associated document is done loading
      */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
         model = new LoginModel();
+    }
+
+    public void setUsername(String uName)
+    {
+        username.setText(uName);
+    }
+
+    public void setPassword(String pass)
+    {
+        password.setText(pass);
     }
 
     public void setScreenParent( ScreensController screenParent)
@@ -47,7 +57,6 @@ public class LoginScreen implements Initializable, ControlledScreen
     {
         try { // check username and password in model wiht login validations method that's a void method.
             model.loginValidation(username, password);
-            //System.out.println("DEBUG: meep after");
             loginValid = model.getLogin();
             if(!loginValid) {
                 setMessage("invalid name or password");
@@ -81,13 +90,13 @@ public class LoginScreen implements Initializable, ControlledScreen
         username.setText("");
         password.setText("");
     }
-
+    //Called when back button pressed
     @FXML
     private void goToMainScreen(javafx.event.ActionEvent event)
     { // only if the user press back this will return the user to the main screen
         myController.setScreen(Screens.MAIN);
     }
-
+    //Called when user attempts to log-in
     @FXML
     private void goToMainMenu(javafx.event.ActionEvent event)
     { // only if the user is successfully logged in then, it'll take the user to the main menu
