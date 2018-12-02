@@ -4,7 +4,10 @@ import consumables.decorators.DrinkDecorator;
 import consumables.decorators.FoodDecorator;
 import consumables.decorators.SideDecorator;
 import consumables.decorators.ToppingDecorator;
+import consumables.drinks.Drinks;
 import consumables.states.State;
+import consumables.toppings.Toppings;
+import javafx.geometry.Side;
 
 import java.util.ArrayList;
 
@@ -81,5 +84,35 @@ public class Order
 	public void setOrderState(State orderState)
 	{
 		this.orderState = orderState;
+	}
+	
+	public void addDrink(DrinkDecorator drink)
+	{
+		drinks.add(drink);
+	}
+	
+	public void removeDrink(int index)
+	{
+		drinks.remove(index);
+	}
+	
+	public void addFood(FoodDecorator food)
+	{
+		this.food.add(food);
+	}
+	
+	public void removeFood(int index)
+	{
+		food.remove(index);
+	}
+	
+	public void addSide(SideDecorator side)
+	{
+		sides.add(side);
+	}
+	
+	public void removeSide(int index)
+	{
+		sides.remove(index);
 	}
 }
