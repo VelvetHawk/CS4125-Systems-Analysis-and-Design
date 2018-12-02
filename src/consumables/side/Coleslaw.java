@@ -3,17 +3,13 @@ package consumables.side;
 import consumables.Size;
 import consumables.decorators.Consumable;
 import consumables.decorators.FoodDecorator;
+import consumables.decorators.SideDecorator;
 
-public class Coleslaw extends FoodDecorator
+public class Coleslaw extends SideDecorator
 {
     public Coleslaw(Consumable parent)
     {
         super(parent);
-    }
-
-    public Coleslaw(Consumable parent, Size size)
-    {
-        super(parent, size);
     }
 
     @Override

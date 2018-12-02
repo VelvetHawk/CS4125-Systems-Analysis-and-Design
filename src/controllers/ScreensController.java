@@ -39,7 +39,7 @@ public class ScreensController extends StackPane
 	private Order customerOrder;
 	private ConsumableFactory foodFactory;
 	
-	private ConsumableFactory sideFactory;
+	
 	private ConsumableFactory toppingFactory;
     
     public ScreensController()
@@ -50,7 +50,7 @@ public class ScreensController extends StackPane
 		customerOrder = new Order();
 		foodFactory = FactoryProducer.getFactory(Consumables.FOOD);
 		
-		sideFactory = FactoryProducer.getFactory(Consumables.SIDE);
+		
 		toppingFactory = FactoryProducer.getFactory(Consumables.TOPPING);
     }
     
