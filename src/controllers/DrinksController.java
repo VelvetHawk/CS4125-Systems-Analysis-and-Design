@@ -24,9 +24,8 @@ public class DrinksController implements Initializable, ControlledScreen
 {
     ScreensController myController;
     private ConsumableFactory drinkFactory;
-    private Consumable drink;
-    
-    /**
+	
+	/**
      * Initializes the controller class.
      */
     @Override
@@ -105,7 +104,7 @@ public class DrinksController implements Initializable, ControlledScreen
     
     private void addDrink(Drinks drinkType)
     {
-	    drink = drinkFactory.getDrink();
+	    Consumable drink = drinkFactory.getDrink();
 	    drink = drinkFactory.addDrink(drinkType, drink);
 	    myController.getCustomerOrder().addDrink((DrinkDecorator) drink);
     }
