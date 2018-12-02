@@ -16,7 +16,7 @@ import javafx.fxml.Initializable;
  *
  * @author maqayoom
  */
-public class ToppingsController implements Initializable, ControlledScreen
+public class SideFoodController implements Initializable, ControlledScreen
 {
     ScreensController myController;
     
@@ -36,58 +36,9 @@ public class ToppingsController implements Initializable, ControlledScreen
 
 
     @FXML
-    private void goToStatic(ActionEvent event)
-    {
-//        myController.setScreen(Screens.MAIN_MENU);
-        //backButton.setText("Clicked!");
+    private void goToStatic(ActionEvent event){
         // TODO: Close dialogue box
         ((Button)event.getTarget()).getScene().getWindow().hide();
-    }
-    @FXML
-    private void goToFood(ActionEvent event)
-    {
-        //myController.setScreen(PopUpScreens.SELECT_TOPPING);
-    }
-
-    @FXML
-    private void getBeef(ActionEvent event)
-    {
-        System.out.println("Beef is clicked");
-    }
-    @FXML
-    private void getCheese(ActionEvent event)
-    {
-        System.out.println("Cheese is clicked");
-    }
-    @FXML
-    private void getChicken(ActionEvent event)
-    {
-        System.out.println("Chicken is clicked");
-    }
-    @FXML
-    private void getHam(ActionEvent event)
-    {
-        System.out.println("Ham is clicked");
-    }
-    @FXML
-    private void getMushroom(ActionEvent event)
-    {
-        System.out.println("Mushroom is clicked");
-    }
-    @FXML
-    private void getPepperoni(ActionEvent event)
-    {
-        System.out.println("Pepperoni  is clicked");
-    }
-    @FXML
-    private void getPineapple(ActionEvent event)
-    {
-        System.out.println("Pineapple  is clicked");
-    }
-    @FXML
-    private void getSausage(ActionEvent event)
-    {
-        System.out.println("Sausage  is clicked");
     }
 
     @FXML

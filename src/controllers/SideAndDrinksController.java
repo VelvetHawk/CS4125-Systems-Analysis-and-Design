@@ -3,6 +3,7 @@ package controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import display.views.PopUpScreens;
 import display.views.Screens;
 import javafx.scene.control.Button;
 import main.Restaurant;
@@ -15,7 +16,7 @@ import javafx.fxml.Initializable;
  *
  * @author maqayoom
  */
-public class DrinksController implements Initializable, ControlledScreen
+public class SideAndDrinksController implements Initializable, ControlledScreen
 {
     ScreensController myController;
     
@@ -33,9 +34,9 @@ public class DrinksController implements Initializable, ControlledScreen
         myController = screenParent;
     }
 
+
     @FXML
-    private void goToMainMenu(ActionEvent event)
-    {
+    private void goToStatic(ActionEvent event){
         // TODO: Close dialogue box
         ((Button)event.getTarget()).getScene().getWindow().hide();
     }
@@ -86,5 +87,31 @@ public class DrinksController implements Initializable, ControlledScreen
     private void getWater(ActionEvent event)
     {
         System.out.println("WATER is clicked");
+    }
+
+    @FXML
+    private void getBeans(ActionEvent event)
+    {
+        System.out.println("Beans is clicked");
+    }
+    @FXML
+    private void getChips(ActionEvent event)
+    {
+        System.out.println("Chips is clicked");
+    }
+    @FXML
+    private void getColeslaw(ActionEvent event)
+    {
+        System.out.println("Coleslaw is clicked");
+    }
+    @FXML
+    private void getGarlicbread(ActionEvent event)
+    {
+        System.out.println("Garlicbread is clicked");
+    }
+    @FXML
+    private void getOnionRings(ActionEvent event)
+    {
+        System.out.println("onionRings is clicked");
     }
 }

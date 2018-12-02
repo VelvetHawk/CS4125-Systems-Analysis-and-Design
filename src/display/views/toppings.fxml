@@ -15,8 +15,7 @@
          <children>
             <ToolBar prefHeight="17.0" prefWidth="806.0">
               <items>
-                <Button mnemonicParsing="false" onAction="#goToMainMenu" text="Back To Main Menu" />
-                  <Button mnemonicParsing="false" onAction="#goToFood" text="Back To Food" />
+                <Button mnemonicParsing="false" onAction="#goToStatic" text="Back" />
               </items>
             </ToolBar>
             <SplitPane dividerPositions="0.4965635738831615" layoutX="-1.0" layoutY="33.0" prefHeight="565.0" prefWidth="584.0">

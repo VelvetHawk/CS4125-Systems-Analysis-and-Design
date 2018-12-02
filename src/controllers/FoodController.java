@@ -3,7 +3,9 @@ package controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import display.views.PopUpScreens;
 import display.views.Screens;
+import javafx.scene.control.Button;
 import main.Restaurant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,12 +37,15 @@ public class FoodController implements Initializable, ControlledScreen
     @FXML
     private void goToMainMenu(ActionEvent event)
     {
-        myController.setScreen(Screens.MAIN_MENU);
+        // TODO: Close dialogue box
+        ((Button)event.getTarget()).getScene().getWindow().hide();
     }
 
     @FXML
     private void getPlanBurger(ActionEvent event)
     {
+        // TODO: Make food choice popup appear
+        myController.setPopUpScreen(PopUpScreens.SELECT_SIDE_OR_DRINK);
         System.out.println("PLANE BURGER is clicked");
     }
 
@@ -48,50 +53,63 @@ public class FoodController implements Initializable, ControlledScreen
     private void getDoubleBurger(ActionEvent event)
     {
         System.out.println("Double BURGER is clicked");
+        // TODO: Make food choice popup appear
+        myController.setPopUpScreen(PopUpScreens.SELECT_SIDE_OR_DRINK);
     }
 
     @FXML
     private void getRegularBurger(ActionEvent event)
     {
         System.out.println("Regular BURGER is clicked");
+        // TODO: Make food choice popup appear
+        myController.setPopUpScreen(PopUpScreens.SELECT_SIDE_OR_DRINK);
     }
 
     @FXML
     private void getShamKebab(ActionEvent event)
     {
         System.out.println("sham kebab is clicked");
+        // TODO: Make food choice popup appear
+        myController.setPopUpScreen(PopUpScreens.SELECT_SIDE_OR_DRINK);
     }
 
     @FXML
     private void getTavaKebab(ActionEvent event)
     {
         System.out.println("Tava kebab is clicked");
+        // TODO: Make food choice popup appear
+        myController.setPopUpScreen(PopUpScreens.SELECT_SIDE_OR_DRINK);
     }
 
     @FXML
     private void getSeekhKebab(ActionEvent event)
     {
         System.out.println("Seekh kebab  is clicked");
+        // TODO: Make food choice popup appear
+        myController.setPopUpScreen(PopUpScreens.SELECT_SIDE_OR_DRINK);
     }
 
     @FXML
     private void getLargePizza(ActionEvent event)
     {
-        //myController.setScreen(Screens.Select_Topping);
-        System.out.println("Large Pizza  is clicked");
+        // TODO: Make food choice popup appear
+        System.out.println("Topping choice selected");
+        myController.setPopUpScreen(PopUpScreens.SELECT_TOPPING);
     }
 
     @FXML
     private void getMeduimPizza(ActionEvent event)
     {
-        //myController.setScreen(Screens.Select_Topping);
-        System.out.println("Medium Pizza  is clicked");
+        // TODO: Make food choice popup appear
+        System.out.println("Topping choice selected");
+        myController.setPopUpScreen(PopUpScreens.SELECT_TOPPING);
     }
 
     @FXML
     private void getSmallPizza(ActionEvent event)
     {
-        //myController.setScreen(Screens.Select_Topping);
-        System.out.println(" Small Pizza  is clicked");
+        // TODO: Make food choice popup appear
+        System.out.println("Topping choice selected");
+        myController.setPopUpScreen(PopUpScreens.SELECT_TOPPING);
     }
 }

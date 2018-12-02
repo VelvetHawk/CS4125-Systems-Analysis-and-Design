@@ -60,7 +60,7 @@ public class OrderTypeChoiceController implements Initializable , ControlledScre
 	{
 		// TODO: Make side choice popup appear
 		System.out.println("Food choice selected");
-		myController.setPopUpScreen(PopUpScreens.SELECT_TOPPING);
+		myController.setPopUpScreen(PopUpScreens.SELECT_SIDE);
 	}
 	
 	@FXML
