@@ -40,7 +40,7 @@ public class MakeOrderController implements Initializable, ControlledScreen
 		// only if the user is successfully logged in then, it'll take the user to the main menu
 		myController.setScreen(Screens.MAIN_MENU);
 	}
-
+	
 	@FXML
 	public void addItemButtonClicked(ActionEvent event)
 	{

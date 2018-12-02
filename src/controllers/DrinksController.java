@@ -109,5 +109,8 @@ public class DrinksController implements Initializable, ControlledScreen
 	    Consumable drink = drinkFactory.getDrink();
 	    drink = drinkFactory.addDrink(drinkType, drink);
 	    myController.getCustomerOrder().addDrink((DrinkDecorator) drink);
+	    /*
+	        NOTE: Can add optional code to close the window as confirmation
+	     */
     }
 }

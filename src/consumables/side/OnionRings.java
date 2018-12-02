@@ -3,17 +3,13 @@ package consumables.side;
 import consumables.Size;
 import consumables.decorators.Consumable;
 import consumables.decorators.FoodDecorator;
+import consumables.decorators.SideDecorator;
 
-public class OnionRings extends FoodDecorator
+public class OnionRings extends SideDecorator
 {
     public OnionRings(Consumable parent)
     {
         super(parent);
-    }
-
-    public OnionRings(Consumable parent, Size size)
-    {
-        super(parent, size);
     }
 
     @Override

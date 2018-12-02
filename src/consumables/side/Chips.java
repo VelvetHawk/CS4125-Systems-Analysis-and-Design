@@ -3,17 +3,13 @@ package consumables.side;
 import consumables.Size;
 import consumables.decorators.Consumable;
 import consumables.decorators.FoodDecorator;
+import consumables.decorators.SideDecorator;
 
-public class Chips extends FoodDecorator
+public class Chips extends SideDecorator
 {
     public Chips(Consumable parent)
     {
         super(parent);
-    }
-
-    public Chips(Consumable parent, Size size)
-    {
-        super(parent, size);
     }
 
     @Override

@@ -39,7 +39,7 @@ public class ScreensController extends StackPane
 	private Order customerOrder;
 	private ConsumableFactory foodFactory;
 	
-	private ConsumableFactory sideFactory;
+	
 	private ConsumableFactory toppingFactory;
     
     public ScreensController()
@@ -50,12 +50,13 @@ public class ScreensController extends StackPane
 		customerOrder = new Order();
 		foodFactory = FactoryProducer.getFactory(Consumables.FOOD);
 		
-		sideFactory = FactoryProducer.getFactory(Consumables.SIDE);
+		
 		toppingFactory = FactoryProducer.getFactory(Consumables.TOPPING);
     }
     
     public Order getCustomerOrder()
     {
+	    System.out.println("Calling this");
     	return customerOrder;
     }
     
@@ -174,6 +175,7 @@ public class ScreensController extends StackPane
 		    }
 		    return true;
 	    } else {
+		    System.out.println("Screen: " + screens.get(screen));
 		    System.out.println("screen hasn't been loaded!! \n");
 		    return false;
 	    }

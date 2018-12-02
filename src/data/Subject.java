@@ -3,5 +3,5 @@ package data;
 public interface Subject
 {
 	public void notifyAllObservers();
-	public void attach();
+	public void attach(Observer observer);
 }
