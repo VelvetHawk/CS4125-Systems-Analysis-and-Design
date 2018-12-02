@@ -44,9 +44,4 @@ public class MainMenu implements Initializable, ControlledScreen
     {
         myController.setScreen(Screens.MAKE_ORDER);
     }
-    @FXML
-    private void goToDrinksPopUp(ActionEvent event)
-    {
-        myController.setPopUpScreen(PopUpScreens.SELECT_DRINK);
-    }
 }

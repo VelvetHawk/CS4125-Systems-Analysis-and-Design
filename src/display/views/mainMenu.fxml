@@ -17,7 +17,6 @@
             <Button mnemonicParsing="false" onAction="#goToOrderScreen" text="Make an Order" />
             <SplitMenuButton mnemonicParsing="false" text="Options">
               <items>
-                <MenuItem mnemonicParsing="false" onAction="#goToDrinksPopUp" text="Buy Drink" />
                 <MenuItem mnemonicParsing="false" onAction="#goToMainScreen" text="Logout" />
               </items>
                <opaqueInsets>
