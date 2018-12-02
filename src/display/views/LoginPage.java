@@ -66,7 +66,7 @@ public class LoginPage extends JFrame
                 String pass=new String(passChars);
                 try {
                     Class.forName("com.mysql.jdbc.Driver");
-                    conn = DriverManager.getConnection("jdbc:mysql://localhost/accounts?" +
+                    conn = DriverManager.getConnection("jdbc:mysql://localhost/data.accounts?" +
                             "user=sqluser&password=sqluserpw");
                     String sql = "SELECT username, password FROM TakeawayAccounts where username=? and password=?";
                     PreparedStatement ps=conn.prepareStatement(sql);
