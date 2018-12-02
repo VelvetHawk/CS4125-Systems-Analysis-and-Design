@@ -74,4 +74,25 @@ public class ToppingsController implements Initializable, ControlledScreen {
         System.out.println("Sausage  is clicked");
     }
 
+    @FXML
+    private void getBeans(ActionEvent event){
+        System.out.println("Beef is clicked");
+    }
+    @FXML
+    private void getChips(ActionEvent event){
+        System.out.println("Cheese is clicked");
+    }
+    @FXML
+    private void getColeslaw(ActionEvent event){
+        System.out.println("Chicken is clicked");
+    }
+    @FXML
+    private void getGarlicbread(ActionEvent event){
+        System.out.println("Ham is clicked");
+    }
+    @FXML
+    private void getOnionRings(ActionEvent event){
+        System.out.println("Mushroom is clicked");
+    }
+
 }
