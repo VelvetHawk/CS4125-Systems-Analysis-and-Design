@@ -1,9 +1,7 @@
-package consumables.decorators;
+package consumables.factories;
 
-import consumables.factories.DrinksFactory;
-import consumables.factories.FoodFactory;
-import consumables.factories.SidesFactory;
-import consumables.factories.ToppingsFactory;
+import consumables.decorators.ConsumableFactory;
+import consumables.decorators.Consumables;
 
 public class FactoryProducer
 {

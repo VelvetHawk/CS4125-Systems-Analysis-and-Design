@@ -4,7 +4,7 @@ import consumables.decorators.Consumable;
 import consumables.decorators.ConsumableFactory;
 import controllers.ScreensController;
 import consumables.decorators.Consumables;
-import consumables.decorators.FactoryProducer;
+import consumables.factories.FactoryProducer;
 import consumables.drinks.Drinks;
 import consumables.states.CreatedState;
 import consumables.states.DeliveredState;

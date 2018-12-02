@@ -2,7 +2,12 @@ package controllers;
 
 import java.util.HashMap;
 
-import controllers.ControlledScreen;
+import consumables.Order;
+import consumables.decorators.Consumable;
+import consumables.decorators.ConsumableFactory;
+import consumables.decorators.Consumables;
+import consumables.factories.FactoryProducer;
+import consumables.food.Food;
 import display.views.PopUpScreens;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -19,22 +24,53 @@ import javafx.util.Duration;
 
 import display.views.Screens;
 
-import javax.swing.text.DefaultTextUI;
 
 /**
  *
  * @author maqayoom
  */
-public class ScreensController  extends StackPane
+public class ScreensController extends StackPane
 {
-    //Holds the screens to be displayed
-
+    // The screens to be displayed
     private HashMap<Screens, Node> screens = new HashMap<>();
 	private HashMap<PopUpScreens, Stage> popUpScreens = new HashMap<>();
+	
+	// Customer data
+	private Order customerOrder;
+	private ConsumableFactory foodFactory;
+	
+	private ConsumableFactory sideFactory;
+	private ConsumableFactory toppingFactory;
     
     public ScreensController()
 	{
         super();
+		
+		// Default
+		customerOrder = new Order();
+		foodFactory = FactoryProducer.getFactory(Consumables.FOOD);
+		
+		sideFactory = FactoryProducer.getFactory(Consumables.SIDE);
+		toppingFactory = FactoryProducer.getFactory(Consumables.TOPPING);
+    }
+    
+    public Order getCustomerOrder()
+    {
+    	return customerOrder;
+    }
+    
+    public Consumable addConsumableToOrder(Food food)
+    {
+        return null;
+    }
+    
+    public void completeCustomerOrder()
+    {
+        /*
+            - Connect to DB, log order
+            - Link it it customer
+            - Create new order object
+         */
     }
 
     //Add the screen to the collection
@@ -86,7 +122,7 @@ public class ScreensController  extends StackPane
 		    myScreenControler.setScreenParent(this);
 		    // Create a stage and add onClose functionality
 		    Stage popUpWindow = new Stage();
-		    popUpWindow.setScene(new Scene(root, 500, 500));
+		    popUpWindow.setScene(new Scene(root, 700, 500));
 		    // Event logic
 		    popUpWindow.setOnCloseRequest(closeEvent ->
 		    {
