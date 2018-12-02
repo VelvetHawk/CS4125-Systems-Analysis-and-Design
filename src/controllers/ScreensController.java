@@ -56,6 +56,7 @@ public class ScreensController extends StackPane
     
     public Order getCustomerOrder()
     {
+	    System.out.println("Calling this");
     	return customerOrder;
     }
     
@@ -174,6 +175,7 @@ public class ScreensController extends StackPane
 		    }
 		    return true;
 	    } else {
+		    System.out.println("Screen: " + screens.get(screen));
 		    System.out.println("screen hasn't been loaded!! \n");
 		    return false;
 	    }
