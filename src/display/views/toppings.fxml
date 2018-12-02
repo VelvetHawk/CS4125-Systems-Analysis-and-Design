@@ -18,7 +18,7 @@
                 <Button mnemonicParsing="false" onAction="#goToStatic" text="Back" />
               </items>
             </ToolBar>
-            <SplitPane dividerPositions="0.4965635738831615" layoutX="-1.0" layoutY="33.0" prefHeight="565.0" prefWidth="584.0">
+            <SplitPane layoutX="-1.0" layoutY="33.0" prefHeight="565.0" prefWidth="584.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
@@ -31,16 +31,6 @@
                         <Button layoutX="16.0" layoutY="117.0" mnemonicParsing="false" onAction="#getChicken" prefHeight="7.0" prefWidth="105.0" text="Chicken" />
                         <Button layoutX="17.0" layoutY="157.0" mnemonicParsing="false" onAction="#getHam" prefHeight="7.0" prefWidth="105.0" text="Ham" />
                         <Button layoutX="166.0" layoutY="157.0" mnemonicParsing="false" onAction="#getMushroom" prefHeight="7.0" prefWidth="105.0" text="Mushroom" />
-                     </children>
-                  </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                     <children>
-                        <Label layoutX="19.0" layoutY="4.0" prefHeight="20.0" prefWidth="101.0" style="-fx-background-color: orange;" text="Side Order" />
-                        <Button layoutX="24.0" layoutY="41.0" mnemonicParsing="false" onAction="#getBeans" prefHeight="27.0" prefWidth="111.0" text="Beans" />
-                        <Button layoutX="24.0" layoutY="77.0" mnemonicParsing="false" onAction="#getChips" prefHeight="27.0" prefWidth="110.0" text="Chips" />
-                        <Button layoutX="24.0" layoutY="113.0" mnemonicParsing="false" onAction="#getColeslaw" prefHeight="27.0" prefWidth="112.0" text="Coleslaw" />
-                        <Button layoutX="24.0" layoutY="150.0" mnemonicParsing="false" onAction="#getGarlicbread" prefHeight="27.0" prefWidth="112.0" text="Garlicbread" />
-                        <Button layoutX="24.0" layoutY="189.0" mnemonicParsing="false" onAction="#getOnionRings" prefHeight="27.0" prefWidth="113.0" text="Onion-rings" />
                      </children>
                   </AnchorPane>
               </items>
