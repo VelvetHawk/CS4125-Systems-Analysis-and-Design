@@ -25,10 +25,6 @@ public class Order
 		{
 			total += food.get(i).getCost();
 		}
-		for (int i = 0; i < toppings.size(); i++)
-		{
-			total += toppings.get(i).getCost();
-		}
 		for (int i = 0; i < sides.size(); i++)
 		{
 			total += sides.get(i).getCost();
