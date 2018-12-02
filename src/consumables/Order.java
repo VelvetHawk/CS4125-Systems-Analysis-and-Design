@@ -1,10 +1,8 @@
 package consumables;
 
-import consumables.decorators.DrinkDecorator;
-import consumables.decorators.FoodDecorator;
-import consumables.decorators.SideDecorator;
-import consumables.decorators.ToppingDecorator;
+import consumables.decorators.*;
 import consumables.drinks.Drinks;
+import consumables.factories.FactoryProducer;
 import consumables.states.State;
 import consumables.toppings.Toppings;
 import javafx.geometry.Side;
@@ -19,11 +17,27 @@ public class Order
 	private ArrayList<SideDecorator> sides;
 	private ArrayList<DrinkDecorator> drinks;
 	private State orderState;
-	
+
 	public double getTotalCost()
 	{
-		// TODO: Implement method
-		return 0;
+		double total = 0.0;
+		for (int i = 0; i < food.size(); i++)
+		{
+			total += food.get(i).getCost();
+		}
+		for (int i = 0; i < toppings.size(); i++)
+		{
+			total += toppings.get(i).getCost();
+		}
+		for (int i = 0; i < sides.size(); i++)
+		{
+			total += sides.get(i).getCost();
+		}
+		for (int i = 0; i < drinks.size(); i++)
+		{
+			total += drinks.get(i).getCost();
+		}
+		return total;
 	}
 
 	public int getOrderNumber()
