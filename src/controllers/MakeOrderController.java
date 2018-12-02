@@ -49,6 +49,6 @@ public class MakeOrderController implements Initializable, ControlledScreen
 	public void addItemButtonClicked(ActionEvent event)
 	{
 		//System.out.println("Boop");
-		myController.getPopUpScreen(PopUpScreens.ORDER_TYPE_CHOICE, 600, 300);
+		myController.setPopUpScreen(PopUpScreens.ORDER_TYPE_CHOICE);
 	}
 }

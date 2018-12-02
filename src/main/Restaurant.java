@@ -68,10 +68,10 @@ public class Restaurant extends Application
         mainContainer.loadScreen(Screens.MAKE_ORDER, "/display/views/makeOrder.fxml");
 		
         // Pop Up Screens
-	    mainContainer.loadScreen(PopUpScreens.ORDER_TYPE_CHOICE, "/display/components/OrderTypeChoice.fxml");
-	    mainContainer.loadScreen(PopUpScreens.SELECT_DRINK, "/display/views/drinks.fxml");
-	    mainContainer.loadScreen(PopUpScreens.SELECT_FOOD, "/display/views/food.fxml");
-	    mainContainer.loadScreen(PopUpScreens.SELECT_TOPPING, "/display/views/toppings.fxml");
+	    mainContainer.loadPopUpScreen(PopUpScreens.ORDER_TYPE_CHOICE, "/display/components/OrderTypeChoice.fxml");
+	    mainContainer.loadPopUpScreen(PopUpScreens.SELECT_DRINK, "/display/views/drinks.fxml");
+	    mainContainer.loadPopUpScreen(PopUpScreens.SELECT_FOOD, "/display/views/food.fxml");
+	    mainContainer.loadPopUpScreen(PopUpScreens.SELECT_TOPPING, "/display/views/toppings.fxml");
      
 	    /*
 	    * Create pop up stage here

@@ -30,7 +30,7 @@ public class ScreensController  extends StackPane
     //Holds the screens to be displayed
 
     private HashMap<Screens, Node> screens = new HashMap<>();
-	private HashMap<PopUpScreens, Node> popUpScreens = new HashMap<>();
+	private HashMap<PopUpScreens, Stage> popUpScreens = new HashMap<>();
     
     public ScreensController()
 	{
@@ -38,26 +38,30 @@ public class ScreensController  extends StackPane
     }
 
     //Add the screen to the collection
-    public void addScreen(Object name, Node screen)
+    public void addScreen(Screens name, Node screen)
     {
-        if (name instanceof Screens)
-    	    screens.put((Screens) name, screen);
-        else if (name instanceof  PopUpScreens)
-	        popUpScreens.put((PopUpScreens) name, screen);
+        screens.put((Screens) name, screen);
+    }
+    
+    public void addPopUp(PopUpScreens name, Stage screen)
+    {
+	    popUpScreens.put((PopUpScreens) name, screen);
     }
 
     //Returns the Node with the appropriate name
-    public Node getScreen(Object name)
+    public Node getScreen(Screens name)
     {
-	    if (name instanceof Screens)
-		    return screens.get((Screens) name);
-	    else
-		    return popUpScreens.get((PopUpScreens) name);
+    	return screens.get(name);
+    }
+    
+    public void getPopUpScreen(PopUpScreens name)
+    {
+	    popUpScreens.get(name).show();
     }
 
     //Loads the fxml file, add the screen to the screens collection and
     //finally injects the screenPane to the controller.
-    public boolean loadScreen(Object name, String resource)
+    public boolean loadScreen(Screens name, String resource)
 	{
         try {
             FXMLLoader myLoader = new FXMLLoader(getClass().getResource(resource));
@@ -70,6 +74,36 @@ public class ScreensController  extends StackPane
             System.out.println(e.getMessage());
             return false;
         }
+    }
+    
+    public boolean loadPopUpScreen(PopUpScreens name, String resource)
+    {
+	    try
+	    {
+		    FXMLLoader myLoader = new FXMLLoader(getClass().getResource(resource));
+		    Parent root = (Parent) myLoader.load();
+		    ControlledScreen myScreenControler = ((ControlledScreen) myLoader.getController());
+		    myScreenControler.setScreenParent(this);
+		    // Create a stage and add onClose functionality
+		    Stage popUpWindow = new Stage();
+		    popUpWindow.setScene(new Scene(root, 500, 500));
+		    // Event logic
+		    popUpWindow.setOnCloseRequest(closeEvent ->
+		    {
+			    ((Stage)closeEvent.getTarget()).hide();
+		    });
+		    // Defaults
+		    popUpWindow.initModality(Modality.APPLICATION_MODAL);
+		    popUpWindow.hide(); // Default is hidden
+		    // Add to list of popups
+		    addPopUp(name, popUpWindow);
+		    return true;
+	    }
+	    catch (Exception e)
+	    {
+		    System.out.println(e.getMessage());
+		    return false;
+	    }
     }
 
     //This method tries to displayed the screen with a predefined name.
@@ -109,28 +143,8 @@ public class ScreensController  extends StackPane
 	    }
     }
     
-    public void getPopUpScreen(PopUpScreens screen, int width, int height)
+    public void setPopUpScreen(PopUpScreens screen)
     {
-	    /*
-	    * TODO: This needs to be changed to keep track of the pop-ups made
-	    * When a new pop-up window is requested, it should be of a new type
-	    * Will operate like a stack, with each pop-up being removed as its
-	    * close button is clicked
-	    *
-	    * Currently a NullPointerException is triggered upon closing this event,
-	    * as somewhere there is a dangling reference where the root of a scene
-	    * is a popup, so re-opening fails
-	    * */
-    	Stage popUp = new Stage();
-    	Scene scene = new Scene((Parent)popUpScreens.get(screen), width, height);
-	    popUp.setScene(scene);
-	    popUp.setOnCloseRequest(event ->
-	    {
-		    Stage source = (Stage)event.getSource();
-			source.getScene().setRoot(null);
-		    popUp.close();
-	    });
-	    popUp.initModality(Modality.APPLICATION_MODAL);
-	    popUp.show();
+	    popUpScreens.get(screen).show();
     }
 }

@@ -52,7 +52,7 @@ public class OrderTypeChoiceController implements Initializable , ControlledScre
     {
         // TODO: Make food choice popup appear
 	    System.out.println("Food choice selected");
-	    myController.getPopUpScreen(PopUpScreens.SELECT_FOOD, 600, 600);
+	    myController.setPopUpScreen(PopUpScreens.SELECT_FOOD);
     }
     
 	@FXML
@@ -60,7 +60,7 @@ public class OrderTypeChoiceController implements Initializable , ControlledScre
 	{
 		// TODO: Make side choice popup appear
 		System.out.println("Food choice selected");
-		myController.getPopUpScreen(PopUpScreens.SELECT_TOPPING, 600, 600);
+		myController.setPopUpScreen(PopUpScreens.SELECT_TOPPING);
 	}
 	
 	@FXML
@@ -68,7 +68,7 @@ public class OrderTypeChoiceController implements Initializable , ControlledScre
 	{
 		// TODO: Make drink choice popup appear
 		System.out.println("Food choice selected");
-		myController.getPopUpScreen(PopUpScreens.SELECT_DRINK, 600, 600);
+		myController.setPopUpScreen(PopUpScreens.SELECT_DRINK);
 	}
     
 
@@ -77,8 +77,6 @@ public class OrderTypeChoiceController implements Initializable , ControlledScre
     {
         //backButton.setText("Clicked!");
         // TODO: Close dialogue box
-	    ((Stage)rootPane.getParent().getScene().getWindow()).close();
-	    myController.getChildren().remove(0);
-	    myController.setScreen(Screens.MAKE_ORDER);
+	    ((Button)event.getTarget()).getScene().getWindow().hide();
     }
 }
