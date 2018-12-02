@@ -17,6 +17,13 @@ public class Order
 	private ArrayList<SideDecorator> sides;
 	private ArrayList<DrinkDecorator> drinks;
 	private State orderState;
+	
+	public Order()
+	{
+		food = new ArrayList<>();
+		sides = new ArrayList<>();
+		drinks = new ArrayList<>();
+	}
 
 	public double getTotalCost()
 	{
