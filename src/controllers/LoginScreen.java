@@ -5,11 +5,8 @@ import display.views.Screens;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.paint.Color;
-import main.Restaurant;
-import models.LoginModel;
+import data.models.LoginModel;
 
-import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.util.ResourceBundle;
 
