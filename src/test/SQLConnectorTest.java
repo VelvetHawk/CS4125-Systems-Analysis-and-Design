@@ -113,7 +113,7 @@ public class SQLConnectorTest {
     @Test
     public void testUpdate(){
         try {
-            sqlconnect.getConnection(DatabaseEnum.AWS);
+            sqlconnect.getConnection(DatabaseEnum.MYSQL);
         }
         catch(Exception e){
 
@@ -131,7 +131,7 @@ public class SQLConnectorTest {
 
         String [] columns = {"username", "password"};
         try {
-            sqlconnect.getConnection(DatabaseEnum.AWS);
+            sqlconnect.getConnection(DatabaseEnum.MYSQL);
         }
         catch(Exception e){
 
@@ -142,16 +142,16 @@ public class SQLConnectorTest {
     @Test
     public void testInsertDelete(){
         String [] columns = {"username", "password"};
-        String [] values = {"default", "'jim'", "'bloggs'", "'testuser'", "'pass'", "'@gmail'", "'ennis'", "'087'", "default", "default", "default", "default"};
+        String [] values = {"default", "jim", "bloggs", "testuser", "pass", "@gmail", "ennis", "087", "default", "default", "default", "default"};
         try {
-            sqlconnect.getConnection(DatabaseEnum.AWS);
+            sqlconnect.getConnection(DatabaseEnum.MYSQL);
         }
         catch(Exception e){
 
         }
-        boolean insertSuccess = sqlconnect.insert("restaurant_db.users", columns, values);
+        boolean insertSuccess = sqlconnect.insert("Restaurant_db.users", columns, values);
         assertTrue(insertSuccess);
-        boolean deleteSuccess = sqlconnect.delete("restaurant_db.users", "WHERE username = 'testuser'");
+        boolean deleteSuccess = sqlconnect.delete("Restaurant_db.users", "WHERE username = 'testuser'");
         assertTrue(deleteSuccess);
 
     }
