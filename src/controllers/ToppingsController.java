@@ -3,6 +3,7 @@ package controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import display.views.PopUpScreens;
 import display.views.Screens;
 import main.Restaurant;
 import javafx.event.ActionEvent;
@@ -37,7 +38,7 @@ public class ToppingsController implements Initializable, ControlledScreen {
     }
     @FXML
     private void goToFood(ActionEvent event){
-        myController.setScreen(Screens.Select_Food);
+        //myController.setScreen(PopUpScreens.SELECT_TOPPING);
     }
 
     @FXML

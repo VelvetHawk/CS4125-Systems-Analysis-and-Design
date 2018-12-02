@@ -35,7 +35,7 @@ public class FXIsBetter extends Application
 		Scene testScene = new Scene(choicePane, 650, 500);
 		
 		// Efficient
-//		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/example/StaticChoiceView.fxml"));
+//		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/example/OrderTypeChoiceOrderTypeChoice.fxml"));
 //		Parent root;
 //		try
 //		{

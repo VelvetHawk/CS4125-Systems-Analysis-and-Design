@@ -6,11 +6,10 @@ import controllers.ScreensController;
 import consumables.decorators.Consumables;
 import consumables.decorators.FactoryProducer;
 import consumables.drinks.Drinks;
-import consumables.factories.DrinksFactory;
 import consumables.states.CreatedState;
 import consumables.states.DeliveredState;
 import consumables.states.Orders;
-import controllers.ScreensController;
+import display.views.PopUpScreens;
 import display.views.Screens;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -53,16 +52,33 @@ public class Restaurant extends Application
 
 
         ScreensController mainContainer = new ScreensController();
-
+        
+        /*
+        * This won't work with main container
+        * - Need to create a separate container for all pop up screens
+        * - Need to make screen controller be able to select a pop up screen
+        *   and have a view passed to it
+        * - Make a popup creation function
+        * */
+		
+        // Screens
         mainContainer.loadScreen(Screens.MAIN, "/display/views/mainScreen.fxml");
         mainContainer.loadScreen(Screens.LOGIN, "/display/views/login.fxml");
         mainContainer.loadScreen(Screens.REGISTRATION, "/display/views/registration.fxml");
         mainContainer.loadScreen(Screens.MAIN_MENU, "/display/views/mainMenu.fxml");
-        mainContainer.loadScreen(Screens.MAKE_ORDER, "/display/views/staticChoice.fxml");
-        mainContainer.loadScreen(Screens.Select_Drink, "/display/views/drinks.fxml");
-        mainContainer.loadScreen(Screens.Select_Food, "/display/views/food.fxml");
-        mainContainer.loadScreen(Screens.Select_Topping, "/display/views/toppings.fxml");
         // change the following back to main
+        mainContainer.loadScreen(Screens.MAKE_ORDER, "/display/views/makeOrder.fxml");
+		
+        // Pop Up Screens
+	    mainContainer.loadScreen(PopUpScreens.ORDER_TYPE_CHOICE, "/display/components/OrderTypeChoice.fxml");
+	    mainContainer.loadScreen(PopUpScreens.SELECT_DRINK, "/display/views/drinks.fxml");
+	    mainContainer.loadScreen(PopUpScreens.SELECT_FOOD, "/display/views/food.fxml");
+	    mainContainer.loadScreen(PopUpScreens.SELECT_TOPPING, "/display/views/toppings.fxml");
+     
+	    /*
+	    * Create pop up stage here
+	    * */
+        
         mainContainer.setScreen(Screens.MAIN); // set the main screen at the start
         // grouping the scene to root.
         Group root = new Group();

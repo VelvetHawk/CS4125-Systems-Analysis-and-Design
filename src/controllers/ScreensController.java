@@ -3,6 +3,7 @@ package controllers;
 import java.util.HashMap;
 
 import controllers.ControlledScreen;
+import display.views.PopUpScreens;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -10,7 +11,10 @@ import javafx.beans.property.DoubleProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import display.views.Screens;
@@ -25,24 +29,33 @@ public class ScreensController  extends StackPane {
     //Holds the screens to be displayed
 
     private HashMap<Screens, Node> screens = new HashMap<>();
-
+	private HashMap<PopUpScreens, Node> popUpScreens = new HashMap<>();
+    
     public ScreensController() {
         super();
     }
 
     //Add the screen to the collection
-    public void addScreen(Screens name, Node screen) {
-        screens.put(name, screen);
+    public void addScreen(Object name, Node screen)
+    {
+        if (name instanceof Screens)
+    	    screens.put((Screens) name, screen);
+        else if (name instanceof  PopUpScreens)
+	        popUpScreens.put((PopUpScreens) name, screen);
     }
 
     //Returns the Node with the appropriate name
-    public Node getScreen(Screens name) {
-        return screens.get(name);
+    public Node getScreen(Object name)
+    {
+	    if (name instanceof Screens)
+		    return screens.get((Screens) name);
+	    else
+		    return popUpScreens.get((PopUpScreens) name);
     }
 
     //Loads the fxml file, add the screen to the screens collection and
     //finally injects the screenPane to the controller.
-    public boolean loadScreen(Screens name, String resource) {
+    public boolean loadScreen(Object name, String resource) {
         try {
             FXMLLoader myLoader = new FXMLLoader(getClass().getResource(resource));
             Parent loadScreen = (Parent) myLoader.load();
@@ -90,5 +103,14 @@ public class ScreensController  extends StackPane {
 		    System.out.println("screen hasn't been loaded!! \n");
 		    return false;
 	    }
+    }
+    
+    public void getPopUpScreen(PopUpScreens screen, int width, int height)
+    {
+	    Stage popUp = new Stage();
+	    popUp.setOnCloseRequest(event ->popUp.close());
+	    popUp.setScene(new Scene((Parent)popUpScreens.get(screen), width, height));
+	    popUp.initModality(Modality.APPLICATION_MODAL);
+	    popUp.show();
     }
 }
