@@ -38,18 +38,12 @@ public class ScreensController extends StackPane
 	// Customer data
 	private Order customerOrder;
 	
-	
-	
-	private ConsumableFactory toppingFactory;
-    
     public ScreensController()
 	{
         super();
 		
 		// Default
 		customerOrder = new Order();
-
-		toppingFactory = FactoryProducer.getFactory(Consumables.TOPPING);
     }
     
     public Order getCustomerOrder()
