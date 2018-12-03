@@ -1,13 +1,7 @@
 package controllers;
 
 import java.util.HashMap;
-
 import consumables.Order;
-import consumables.decorators.Consumable;
-import consumables.decorators.ConsumableFactory;
-import consumables.decorators.Consumables;
-import consumables.factories.FactoryProducer;
-import consumables.food.Food;
 import display.views.PopUpScreens;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -24,37 +18,23 @@ import javafx.util.Duration;
 
 import display.views.Screens;
 
-
-/**
- *
- * @author maqayoom
- */
 public class ScreensController extends StackPane
 {
     // The screens to be displayed
     private HashMap<Screens, Node> screens = new HashMap<>();
 	private HashMap<PopUpScreens, Stage> popUpScreens = new HashMap<>();
-	
 	// Customer data
 	private Order customerOrder;
 	
     public ScreensController()
 	{
         super();
-		
-		// Default
 		customerOrder = new Order();
     }
     
     public Order getCustomerOrder()
     {
-	    System.out.println("Calling this");
     	return customerOrder;
-    }
-    
-    public Consumable addConsumableToOrder(Food food)
-    {
-        return null;
     }
     
     public void completeCustomerOrder()
@@ -92,14 +72,17 @@ public class ScreensController extends StackPane
     //finally injects the screenPane to the controller.
     public boolean loadScreen(Screens name, String resource)
 	{
-        try {
+        try
+        {
             FXMLLoader myLoader = new FXMLLoader(getClass().getResource(resource));
             Parent loadScreen = (Parent) myLoader.load();
             ControlledScreen myScreenControler = ((ControlledScreen) myLoader.getController());
             myScreenControler.setScreenParent(this);
             addScreen(name, loadScreen);
             return true;
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             System.out.println(e.getMessage());
             return false;
         }
@@ -117,10 +100,7 @@ public class ScreensController extends StackPane
 		    Stage popUpWindow = new Stage();
 		    popUpWindow.setScene(new Scene(root, 700, 500));
 		    // Event logic
-		    popUpWindow.setOnCloseRequest(closeEvent ->
-		    {
-			    ((Stage)closeEvent.getTarget()).hide();
-		    });
+		    popUpWindow.setOnCloseRequest(closeEvent -> ((Stage)closeEvent.getTarget()).hide());
 		    // Defaults
 		    popUpWindow.initModality(Modality.APPLICATION_MODAL);
 		    popUpWindow.hide(); // Default is hidden
@@ -141,36 +121,39 @@ public class ScreensController extends StackPane
     // If there isn't any screen being displayed, the new screen is just added to the root.
     public boolean setScreen(final Screens screen)
 	{
-	    if (screens.get(screen) != null) {   //screen loaded
+	    if (screens.get(screen) != null)
+	    {   //screen loaded
 		    final DoubleProperty opacity = opacityProperty();
-		
-		    if (!getChildren().isEmpty()) {    //if there is more than one screen
+		    if (!getChildren().isEmpty())
+		    {    //if there is more than one screen
 			    Timeline fade = new Timeline(
 				    new KeyFrame(Duration.ZERO, new KeyValue(opacity, 1.0)),
-				    new KeyFrame(new Duration(200), t -> {
+				    new KeyFrame(new Duration(200), t ->
+				    {
 					    getChildren().remove(0);                    //remove the displayed screen
 					    getChildren().add(0, screens.get(screen));     //add the screen
 					    Timeline fadeIn = new Timeline(
 						    new KeyFrame(Duration.ZERO, new KeyValue(opacity, 0.0)),
 						    new KeyFrame(new Duration(200), new KeyValue(opacity, 1.0)));
 					    fadeIn.play();
-				    }, new KeyValue(opacity, 0.0)));
+				    }, new KeyValue(opacity, 0.0))
+			    );
 			    fade.play();
-			
-		    } else {
+		    }
+		    else
+	        {
 			    setOpacity(0.0);
 			    getChildren().add(screens.get(screen));       //no one else been displayed, then just show
 			    Timeline fadeIn = new Timeline(
-					    new KeyFrame(Duration.ZERO, new KeyValue(opacity, 0.0)),
-					    new KeyFrame(new Duration(200), new KeyValue(opacity, 1.0)));
+				    new KeyFrame(Duration.ZERO, new KeyValue(opacity, 0.0)),
+				    new KeyFrame(new Duration(200), new KeyValue(opacity, 1.0))
+			    );
 			    fadeIn.play();
 		    }
 		    return true;
-	    } else {
-		    System.out.println("Screen: " + screens.get(screen));
-		    System.out.println("screen hasn't been loaded!! \n");
-		    return false;
 	    }
+	    else
+		    return false;
     }
     
     public void setPopUpScreen(PopUpScreens screen)

@@ -1,6 +1,9 @@
 package consumables.states;
 
+import consumables.Order;
+
+@FunctionalInterface
 public interface State
 {
-    public void doAction(Orders orders);
+    public void processOrder(Order order);
 }

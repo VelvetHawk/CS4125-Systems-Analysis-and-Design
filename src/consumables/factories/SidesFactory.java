@@ -37,32 +37,38 @@ public class SidesFactory extends ConsumableFactory
     }
 
     @Override
-    public Consumable getTopping() {
+    public Consumable getTopping()
+    {
         return null;
     }
 
     @Override
-    public Consumable addTopping(Toppings type, Consumable addTo) {
+    public Consumable addTopping(Toppings type, Consumable addTo)
+    {
         return null;
     }
 
     @Override
-    public Consumable getDrink() {
+    public Consumable getDrink()
+    {
         return null;
     }
 
     @Override
-    public Consumable addDrink(Drinks type, Consumable addTo) {
+    public Consumable addDrink(Drinks type, Consumable addTo)
+    {
         return null;
     }
 
     @Override
-    public Consumable getFood() {
+    public Consumable getFood()
+    {
         return null;
     }
 
     @Override
-    public Consumable addFood(Food type, Consumable addTo) {
+    public Consumable addFood(Food type, Consumable addTo)
+    {
         return null;
     }
 }

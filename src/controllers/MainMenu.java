@@ -2,30 +2,19 @@ package controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import display.views.PopUpScreens;
 import display.views.Screens;
-import main.Restaurant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-/**
- * FXML Controller class
- *
- * @author maqayoom
- */
 public class MainMenu implements Initializable, ControlledScreen
 {
-    ScreensController myController;
-
-    /**
-     * Initializes the controller class.
-     */
+    private ScreensController myController;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
+    
     }
 
     public void setScreenParent(ScreensController screenParent)

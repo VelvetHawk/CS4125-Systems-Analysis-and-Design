@@ -2,27 +2,16 @@ package controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import display.views.PopUpScreens;
-import display.views.Screens;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-import main.Restaurant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-/**
- * FXML Controller class
- *
- * @author maqayoom
- */
 public class OrderTypeChoiceController implements Initializable , ControlledScreen
 {
 	@FXML private AnchorPane rootPane;
@@ -31,15 +20,12 @@ public class OrderTypeChoiceController implements Initializable , ControlledScre
 	@FXML private VBox sideChoice;
 	@FXML private VBox drinkChoice;
 	@FXML private Button backButton;
+	private ScreensController myController;
 
-	ScreensController myController;
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb)
 	{
-	    // Default
+	   
     }
     
     public void setScreenParent(ScreensController screenParent)
@@ -50,33 +36,24 @@ public class OrderTypeChoiceController implements Initializable , ControlledScre
     @FXML
     private void foodChoiceClicked(MouseEvent event)
     {
-        // TODO: Make food choice popup appear
-	    System.out.println("Food choice selected");
 	    myController.setPopUpScreen(PopUpScreens.SELECT_FOOD);
     }
     
 	@FXML
 	private void sideChoiceClicked(MouseEvent event)
 	{
-		// TODO: Make side choice popup appear
-		System.out.println("Food choice selected");
 		myController.setPopUpScreen(PopUpScreens.SELECT_SIDE);
 	}
 	
 	@FXML
 	private void drinkChoiceClicked(MouseEvent event)
 	{
-		// TODO: Make drink choice popup appear
-		System.out.println("Food choice selected");
 		myController.setPopUpScreen(PopUpScreens.SELECT_DRINK);
 	}
-    
 
     @FXML
     private void backButtonClicked(ActionEvent event)
     {
-        //backButton.setText("Clicked!");
-        // TODO: Close dialogue box
 	    ((Button)event.getTarget()).getScene().getWindow().hide();
     }
 }

@@ -1,27 +1,22 @@
 package data.models;
 
 import data.SQLConnector;
-
-import java.sql.Connection;
 import data.DatabaseEnum;
-
 
 public class RegisterModel
 {
-    Connection conn = null;
-    boolean alreadyRegistered = false;
-    boolean registered = false;
-    SQLConnector SQLconn = new SQLConnector();
+    private boolean registered = false;
+    private SQLConnector SQLConn = new SQLConnector();
 
     public RegisterModel() throws Exception
     {
-        SQLconn.getConnection(DatabaseEnum.MYSQL);
+        SQLConn.getConnection(DatabaseEnum.MYSQL);
     }
 
     public boolean checkRegistered(String user, char[] pass)
     {
         //TODO: check if registered
-        return alreadyRegistered;
+        return registered;
     }
 
     public boolean getRegistered()
@@ -52,14 +47,8 @@ public class RegisterModel
         values[9] = "default";
         values[10] = "default";
         values[11] = "default";
-        boolean registerSuccess = SQLconn.insert("users", columns, values);
-        if (registerSuccess) {
-            registered = true;
-        } else {
-            registered = false;
-        }
-        
-        SQLconn.closeConnection();
+        registered = SQLConn.insert("users", columns, values);
+        SQLConn.closeConnection();
     }
 }
 

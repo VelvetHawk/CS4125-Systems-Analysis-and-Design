@@ -55,22 +55,26 @@ public class DrinksFactory extends ConsumableFactory
     }
 
     @Override
-    public Consumable getSide() {
+    public Consumable getSide()
+    {
         return null;
     }
 
     @Override
-    public Consumable addSide(Sides type, Consumable addTo) {
+    public Consumable addSide(Sides type, Consumable addTo)
+    {
         return null;
     }
 
     @Override
-    public Consumable getFood() {
+    public Consumable getFood()
+    {
         return null;
     }
 
     @Override
-    public Consumable addFood(Food type, Consumable addTo) {
+    public Consumable addFood(Food type, Consumable addTo)
+    {
         return null;
     }
 }

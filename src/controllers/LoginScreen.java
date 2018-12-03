@@ -1,37 +1,21 @@
 package controllers;
 
-
 import display.views.Screens;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import data.models.LoginModel;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
-
-
-
-/**
- * FXML Controller class
- *
- * @author maqayoom
- */
 public class LoginScreen implements Initializable, ControlledScreen
 {
     private LoginModel model;
-    boolean loginValid = false;
-    // the field are fxml input from the user
+    private boolean loginValid = false;
     @FXML private TextField username;
     @FXML private PasswordField password;
+    private ScreensController myController;
 
-    ScreensController myController;
-    /**
-     * Initializes the controller class.
-     * This method is called when the associated document is done loading
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -53,17 +37,21 @@ public class LoginScreen implements Initializable, ControlledScreen
         myController = screenParent;
     }
 
-    public void checkCredentials(String username, char[] password)
+    private void checkCredentials(String username, char[] password)
     {
-        try { // check username and password in model wiht login validations method that's a void method.
+        try
+        {   // check username and password in model wiht login validations method that's a void method.
             model.loginValidation(username, password);
             loginValid = model.getLogin();
-            if(!loginValid) {
+            if(!loginValid)
+            {
                 setMessage("invalid name or password");
                 clear_loging_textFields();  // clear users input
             }
-        } catch (Exception ex) {
-            //ex.printStackTrace();
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
         }
     }
 
@@ -80,8 +68,6 @@ public class LoginScreen implements Initializable, ControlledScreen
         alert.setHeaderText("Login, Information");
         alert.setContentText(message);
         alert.showAndWait();
-        //msg = new JLabel(message);
-        //add(msg);
     }
 
     // clear text fields
@@ -90,28 +76,32 @@ public class LoginScreen implements Initializable, ControlledScreen
         username.setText("");
         password.setText("");
     }
+    
     //Called when back button pressed
     @FXML
     private void goToMainScreen(javafx.event.ActionEvent event)
-    { // only if the user press back this will return the user to the main screen
+    {
+    	// only if the user press back this will return the user to the main screen
         myController.setScreen(Screens.MAIN);
     }
+    
     //Called when user attempts to log-in
     @FXML
     private void goToMainMenu(javafx.event.ActionEvent event)
-    { // only if the user is successfully logged in then, it'll take the user to the main menu
+    {
+    	// only if the user is successfully logged in then, it'll take the user to the main menu
         String user = username.getText();
         String userpassword = password.getText();
         char [] password1 = userpassword.toCharArray();
         //char [] password =password_field.getText();
-        if(user.isEmpty() || password1.length == 0){
+        if(user.isEmpty() || password1.length == 0)
             setMessage("Please enter your username and password");
-
-        }else{  // check in the login controller if the user and password are correct.
+        else
+        {
+        	// check in the login controller if the user and password are correct.
             checkCredentials(user, password1);
-            if(getLoginValid() == true){
+            if(getLoginValid())
                 myController.setScreen(Screens.MAIN_MENU);
-            }
         }
     }
 }

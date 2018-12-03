@@ -1,8 +1,6 @@
 package consumables.side;
 
-import consumables.Size;
 import consumables.decorators.Consumable;
-import consumables.decorators.FoodDecorator;
 import consumables.decorators.SideDecorator;
 
 public class Chips extends SideDecorator

@@ -1,17 +1,10 @@
 package consumables;
 
 import consumables.decorators.*;
-import consumables.drinks.Drinks;
-import consumables.factories.FactoryProducer;
-import consumables.food.Food;
 import consumables.states.State;
-import consumables.toppings.Toppings;
 import data.Observer;
 import data.Subject;
-import javafx.geometry.Side;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class Order implements Subject
 {
@@ -21,7 +14,6 @@ public class Order implements Subject
 	private ArrayList<SideDecorator> sides;
 	private ArrayList<DrinkDecorator> drinks;
 	private State orderState;
-	
 	// Observers
 	private ArrayList<Observer> observers;
 	
@@ -30,25 +22,15 @@ public class Order implements Subject
 		food = new ArrayList<>();
 		sides = new ArrayList<>();
 		drinks = new ArrayList<>();
-		
 		observers = new ArrayList<>();
 	}
 
 	public double getTotalCost()
 	{
 		double total = 0.0;
-		for (int i = 0; i < food.size(); i++)
-		{
-			total += food.get(i).getCost();
-		}
-		for (int i = 0; i < sides.size(); i++)
-		{
-			total += sides.get(i).getCost();
-		}
-		for (int i = 0; i < drinks.size(); i++)
-		{
-			total += drinks.get(i).getCost();
-		}
+		for (FoodDecorator food : food)     total += food.getCost();
+		for (SideDecorator side : sides)    total += side.getCost();
+		for (DrinkDecorator drink : drinks) total += drink.getCost();
 		return total;
 	}
 
@@ -165,6 +147,5 @@ public class Order implements Subject
 	public void attach(Observer observer)
 	{
 		observers.add(observer);
-		System.out.println("Observer successfully added");
 	}
 }

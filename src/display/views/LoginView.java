@@ -8,8 +8,6 @@
 //import com.mvc.controller.LoginController;
 package display.views;
 
-import controllers.LoginController;
-
 /**
  *
  * @author conor_000
