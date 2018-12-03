@@ -80,9 +80,9 @@ public class SideFoodController implements Initializable, ControlledScreen
 	
 	private void addSide(Sides sideType)
 	{
-		Consumable drink = sideFactory.getSide();
-		drink = sideFactory.addSide(sideType, drink);
-		myController.getCustomerOrder().addSide((SideDecorator) drink);
+		Consumable side = sideFactory.getSide();
+		side = sideFactory.addSide(sideType, side);
+		myController.getCustomerOrder().addSide((SideDecorator) side);
 	    /*
 	        NOTE: Can add optional code to close the window as confirmation
 	     */

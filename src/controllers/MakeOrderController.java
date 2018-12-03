@@ -1,37 +1,49 @@
 package controllers;
+		
+		import consumables.Order;
+		import consumables.decorators.Consumable;
+		import consumables.decorators.DrinkDecorator;
+		import consumables.decorators.FoodDecorator;
+		import consumables.decorators.SideDecorator;
+		import data.Observer;
+		import display.views.PopUpScreens;
+		import display.views.Screens;
+		import javafx.fxml.FXML;
+		import javafx.fxml.Initializable;
+		import javafx.geometry.Insets;
+		import javafx.scene.control.Button;
+		import javafx.scene.control.Label;
+		import javafx.scene.control.ScrollPane;
+		import javafx.scene.layout.AnchorPane;
+		import javafx.event.ActionEvent;
+		import javafx.scene.layout.HBox;
+		import javafx.scene.layout.VBox;
+		import java.net.URL;
+		import java.util.ArrayList;
+		import java.util.ResourceBundle;
 
-import display.views.PopUpScreens;
-import display.views.Screens;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
-import javafx.event.ActionEvent;
-
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class MakeOrderController implements Initializable, ControlledScreen
+public class MakeOrderController implements Initializable, ControlledScreen, Observer
 {
 	@FXML private AnchorPane rootPane;
 	@FXML private Label paneTitle;
 	@FXML private Button backButton;
 	@FXML private Button addItemButton;
 	@FXML private Label totalAmountLabel;
+	@FXML private ScrollPane scrollPane;
 	
 	private ScreensController myController;
 	
 	@Override
 	public void initialize(URL url, ResourceBundle rb)
 	{
-	
+		scrollPane.setContent(new VBox());
 	}
 	
 	@Override
 	public void setScreenParent(ScreensController screenParent)
 	{
 		myController = screenParent;
+		myController.getCustomerOrder().attach(this);
 	}
 	
 	@FXML
@@ -47,12 +59,62 @@ public class MakeOrderController implements Initializable, ControlledScreen
 		//System.out.println("Boop");
 		myController.setPopUpScreen(PopUpScreens.ORDER_TYPE_CHOICE);
 	}
-
+	
 	@FXML
 	public void getOrderCompleted(ActionEvent event)
 	{
 		//System.out.println("Boop");
 		System.out.println("Order completed pressed");
 		//myController.setPopUpScreen(PopUpScreens.ORDER_TYPE_CHOICE);
+	}
+	
+	@Override
+	public void update()
+	{
+		// Update item rows
+		Order customerOrder = myController.getCustomerOrder();
+		VBox itemView = (VBox) scrollPane.getContent();
+		itemView.getChildren().clear(); // Remove previous nodes
+		// Add food
+		addItemsToList(customerOrder, itemView, customerOrder.getFood());
+		// Add sides
+		addItemsToList(customerOrder, itemView, customerOrder.getSides());
+		// Add drinks
+		addItemsToList(customerOrder, itemView, customerOrder.getDrinks());
+		
+		// Update total label
+		totalAmountLabel.setText(
+				String.format("%.2f", myController.getCustomerOrder().getTotalCost())
+		);
+	}
+	
+	private void addItemsToList(Order customerOrder, VBox itemView, ArrayList<? extends Consumable> consumableList)
+	{
+		consumableList.forEach(consumable ->
+		{
+			HBox row = new HBox();
+			row.setPadding(new Insets(0, 0, 5, 0));
+			row.setSpacing(20);
+			// Add button to remove row
+			Button removeItem = new Button("-");
+			removeItem.setOnAction(event ->
+			{
+				// Remove consumable from the list it is in
+				if (consumable instanceof FoodDecorator)
+					customerOrder.removeFood(consumable);
+				else if (consumable instanceof SideDecorator)
+					customerOrder.removeSide(consumable);
+				else if (consumable instanceof DrinkDecorator)
+					customerOrder.removeDrink(consumable);
+			});
+			
+			// Add to row
+			row.getChildren().addAll(
+					new Label(consumable.getName()),
+					new Label(String.format("€ %.2f", consumable.getCost())),
+					removeItem
+			);
+			itemView.getChildren().add(row);
+		});
 	}
 }

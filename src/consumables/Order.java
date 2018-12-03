@@ -130,6 +130,13 @@ public class Order implements Subject
 		notifyAllObservers();
 	}
 	
+	public void addFood(FoodDecorator food, Size size)
+	{
+		food.setSize(size);
+		this.food.add(food);
+		notifyAllObservers();
+	}
+	
 	public void removeFood(Consumable food)
 	{
 		this.food.remove(food);
