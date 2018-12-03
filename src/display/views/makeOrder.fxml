@@ -26,7 +26,7 @@
             <Font size="17.0" />
          </font></Button>
       <Label layoutX="14.0" layoutY="355.0" prefHeight="31.0" prefWidth="51.0" text="Total: €" />
-      <Label fx:id="totalAmountLabel" layoutX="68.0" layoutY="357.0" prefHeight="27.0" prefWidth="89.0" text="127.07" />
+      <Label fx:id="totalAmountLabel" layoutX="68.0" layoutY="357.0" prefHeight="27.0" prefWidth="89.0" text="0.00" />
       <Button fx:id="addItemButton1" layoutX="312.0" layoutY="323.0" mnemonicParsing="false" onAction="#getOrderCompleted" prefHeight="31.0" prefWidth="260.0" style="-fx-background-color: grey;" text="Order Complete">
          <font>
             <Font size="17.0" />
