@@ -13,9 +13,26 @@ public class RegisterModel
         SQLConn.getConnection(DatabaseEnum.MYSQL);
     }
 
-    public boolean checkRegistered(String user, char[] pass)
+   public boolean checkRegistered(String user, char[] password) throws Exception
     {
-        //TODO: check if registered
+        if (password != null)
+        {
+            String pass = new String(password);
+            //add '' to values to allow them to be added to sql queries
+            user = "'" + user  + "'";
+            pass = "'" + pass + "'";
+            SQLConnector SQLconn = new SQLConnector();
+            SQLconn.getConnection(DatabaseEnum.MYSQL);
+            String [] columns = {"username"};
+            ResultSet rs = SQLconn.select("users", columns, " WHERE username =" + user, null );
+            //Found a user already registered with the username
+            if(rs.next())
+            {
+                registered = true;
+            }
+            rs.close();
+            SQLconn.closeConnection();
+        }
         return registered;
     }
 
