@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Order implements Subject
 {
 	private int orderNumber;
-	private ArrayList<FoodDecorator> food;
+	private ArrayList<Consumable> food;
 	private ArrayList<ToppingDecorator> toppings;
 	private ArrayList<SideDecorator> sides;
 	private ArrayList<DrinkDecorator> drinks;
@@ -28,7 +28,7 @@ public class Order implements Subject
 	public double getTotalCost()
 	{
 		double total = 0.0;
-		for (FoodDecorator food : food)     total += food.getCost();
+		for (Consumable food : food)     total += food.getCost();
 		for (SideDecorator side : sides)    total += side.getCost();
 		for (DrinkDecorator drink : drinks) total += drink.getCost();
 		return total;
@@ -44,12 +44,12 @@ public class Order implements Subject
 		this.orderNumber = orderNumber;
 	}
 
-	public ArrayList<FoodDecorator> getFood()
+	public ArrayList<Consumable> getFood()
 	{
 		return food;
 	}
 
-	public void setFood(ArrayList<FoodDecorator> food)
+	public void setFood(ArrayList<Consumable> food)
 	{
 		this.food = food;
 	}

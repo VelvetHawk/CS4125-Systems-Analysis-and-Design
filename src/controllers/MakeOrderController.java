@@ -92,9 +92,9 @@ public class MakeOrderController implements Initializable, ControlledScreen, Obs
 			removeItem.setOnAction(event ->
 			{
 				// Remove consumable from the list it is in
-				if (consumable instanceof FoodDecorator)        customerOrder.removeFood(consumable);
-				else if (consumable instanceof SideDecorator)   customerOrder.removeSide(consumable);
+				if (consumable instanceof SideDecorator)        customerOrder.removeSide(consumable);
 				else if (consumable instanceof DrinkDecorator)  customerOrder.removeDrink(consumable);
+				else                                            customerOrder.removeFood(consumable);
 			});
 			
 			// Add to row
