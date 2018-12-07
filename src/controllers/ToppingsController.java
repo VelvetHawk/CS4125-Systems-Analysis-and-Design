@@ -3,10 +3,8 @@ package controllers;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import consumables.decorators.Consumable;
-import consumables.decorators.ConsumableFactory;
-import consumables.decorators.Consumables;
-import consumables.decorators.FoodDecorator;
+
+import consumables.decorators.*;
 import consumables.factories.FactoryProducer;
 import consumables.toppings.Toppings;
 import javafx.scene.control.Button;
@@ -87,12 +85,12 @@ public class ToppingsController implements Initializable, ControlledScreen
     // Adds the selected topping to the last item in the food list
     private void addTopping(Toppings topping)
     {
-        ArrayList<FoodDecorator> food = myController.getCustomerOrder().getFood();
+	    ArrayList<Consumable> food = new ArrayList<>(myController.getCustomerOrder().getFood());
 	    if (food.size() > 0) // If the list is not empty (ie, at least one food item has been added)
 	    {
 	    	Consumable lastFoodItem = food.get(food.size()-1);
 	    	lastFoodItem = toppingFactory.addTopping(topping, lastFoodItem);
-	    	food.set(food.size()-1, (FoodDecorator) lastFoodItem);
+	    	food.set(food.size()-1, lastFoodItem);
 	    	// UI doesn't update until another object added otherwise
 	    	myController.getCustomerOrder().notifyAllObservers();
 	    }
