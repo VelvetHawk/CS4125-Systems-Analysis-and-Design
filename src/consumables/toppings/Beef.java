@@ -1,19 +1,13 @@
 package consumables.toppings;
 
-import consumables.Size;
 import consumables.decorators.Consumable;
-import consumables.decorators.FoodDecorator;
+import consumables.decorators.ToppingDecorator;
 
-public class Beef extends FoodDecorator
+public class Beef extends ToppingDecorator
 {
     public Beef(Consumable parent)
     {
         super(parent);
-    }
-
-    public Beef(Consumable parent, Size size)
-    {
-        super(parent, size);
     }
 
     @Override

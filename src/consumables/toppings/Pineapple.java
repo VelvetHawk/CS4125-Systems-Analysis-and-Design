@@ -1,19 +1,13 @@
 package consumables.toppings;
 
-import consumables.Size;
 import consumables.decorators.Consumable;
-import consumables.decorators.FoodDecorator;
+import consumables.decorators.ToppingDecorator;
 
-public class Pineapple extends FoodDecorator
+public class Pineapple extends ToppingDecorator
 {
     public Pineapple(Consumable parent)
     {
         super(parent);
-    }
-
-    public Pineapple(Consumable parent, Size size)
-    {
-        super(parent, size);
     }
 
     @Override

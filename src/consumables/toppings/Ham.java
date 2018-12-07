@@ -1,19 +1,13 @@
 package consumables.toppings;
 
-import consumables.Size;
 import consumables.decorators.Consumable;
-import consumables.decorators.FoodDecorator;
+import consumables.decorators.ToppingDecorator;
 
-public class Ham extends FoodDecorator
+public class Ham extends ToppingDecorator
 {
     public Ham(Consumable parent)
     {
         super(parent);
-    }
-
-    public Ham(Consumable parent, Size size)
-    {
-        super(parent, size);
     }
 
     @Override
