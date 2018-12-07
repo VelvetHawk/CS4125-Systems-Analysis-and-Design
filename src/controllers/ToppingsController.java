@@ -85,12 +85,12 @@ public class ToppingsController implements Initializable, ControlledScreen
     // Adds the selected topping to the last item in the food list
     private void addTopping(Toppings topping)
     {
-	    ArrayList<Consumable> food = new ArrayList<>(myController.getCustomerOrder().getFood());
+	    ArrayList<FoodDecorator> food = myController.getCustomerOrder().getFood();
 	    if (food.size() > 0) // If the list is not empty (ie, at least one food item has been added)
 	    {
 	    	Consumable lastFoodItem = food.get(food.size()-1);
 	    	lastFoodItem = toppingFactory.addTopping(topping, lastFoodItem);
-	    	food.set(food.size()-1, lastFoodItem);
+	    	food.set(food.size()-1, (FoodDecorator) lastFoodItem);
 	    	// UI doesn't update until another object added otherwise
 	    	myController.getCustomerOrder().notifyAllObservers();
 	    }
